@@ -1,83 +1,39 @@
-
-/* Common CSS */
-* {
-    margin: 0;
-    padding: 0;
+.main{
+    background-color: mediumaquamarine;
+    height: 500px;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
 }
 
-ul {
-    list-style: none;
+.container-1{
+    width: 50%;
+    height: 400px;
+    background-color: red;
+    /* background-image: url(/images/blog-1.png); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* background-position: center; */
+    /* background: url("/images/blog-1.png") no-repeat center/cover; */
+
+    position: absolute;
+    bottom:0px ;
+    
 }
 
-a {
-    text-decoration: none;
+.box-1{
+    height: 300px;
+    width: 300px;
+    background-color: rgb(255, 255, 255);
+    /* position: relative; */
 }
-
-/* Menu start */
-.menu-area {
-    border-bottom: 2px solid #dddddd;
+.box-2{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(255, 0, 225);
+    border-radius: 50%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
 }
-
-.menu-area ul {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.menu-area ul li a {
-    background-color: green;
-    margin-right: 15px;
-    color: #ffffff;
-    padding: 10px 25px;
-    display: inline-block;
-}
-
-
-/* services start */
-.services {
-    background-color: #c8d6e5;
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.services .service-item {
-    width: calc(33.3333333% - 20px);
-    background-color: #00d2d3;
-    margin-right: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-/* Technology start */
-.technology-area {
-    background-color: #c8d6e5;
-    margin: 120px 0;
-    padding: 120px 0;
-}
-
-.technology-area .container {
-    background-color: rebeccapurple;
-    width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-    /* justify-content: space-around; */
-    justify-content: space-between;
-}
-
-.technology-area .container .tech-item {
-    background-color: white;
-    /* width: 200px; */
-    width: calc((100% / 6) - 15px);
-    /* margin: 0 15px 15px 0; */
-    margin-bottom: 15px;
-    text-align: center;
-    padding: 30px;
-    box-sizing: border-box;
-}
-
-.technology-area .container .tech-item span {
-    display: block;
-}
-
-
