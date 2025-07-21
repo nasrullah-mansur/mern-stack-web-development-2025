@@ -1,0 +1,92 @@
+@font-face {
+    font-family: "lato-reg";
+    src: url(../fonts/Lato-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'lato-bold';
+    src: url(../fonts/Lato-Bold.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    font-family: "lato-reg";
+}
+
+.container {
+    width: 960px;
+    border: 1px solid black;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.container .box {
+    height: 200px;
+    width: 25%;
+    /* width: 25vw; */
+    /* height: 20vh; */
+}
+
+.container .box img {
+    width: 100%;
+}
+
+.container .box:first-child {
+    background-color: #9b59b6;
+}
+
+.container .box:nth-child(2) {
+    background-color: #2ecc71;
+}
+
+.container .box:nth-child(3) {
+    background-color: #e74c3c;
+}
+
+.container .box:last-child {
+    background-color: #2c3e50;
+}
+
+h2 {
+    font-size: 28px;
+    color: red;
+
+}
+
+/* .test {
+    text-align: center;
+} */
+
+.test a {
+    padding: 20px 30px;
+    background-color: #b6d311;
+    display: inline-block;
+    /* text-align: center;
+    margin: 0 auto; */
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* @media (min-width: 768px) and (max-width: 991px) {
+    
+} */
+
+
+
