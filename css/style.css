@@ -1,12 +1,78 @@
+/* Simple Selector */
 
-/* External CSS */
+/* 
+    1. global/all selector "*"
+    2. tag name selector
+    3. class name selector "."
+    4. id name selector "#"
 
-p {
+*/
+
+/* * {
+    color: blue;
+} */
+
+/* h1 {
+    color: purple;
+} */
+
+/* .test {
+    color: yellow;
+} */
+
+/* #test-two {
+    color: blueviolet;
+} */
+
+/* h4 {
     color: red;
-    background-color: yellow;
-} 
+} */
+
+/* .myh4 {
+    color: blueviolet;
+} */
+
+
+.bg-red {
+    background-color: red;
+}
+
+.bg-red {
+    background-color: green;
+}
+
+p span {
+    color: red;
+}
+
+
+h2 {
+    color: #1a09a0;
+    /* background-color: rgb(165, 42, 42, 1); */
+    font-size: 30px;
+    font-weight: normal;
+    font-style: italic;
+    text-decoration: none;
+    text-align: justify;
+    text-transform: capitalize;
+}
 
 h4 {
-    background-color: red;
+    text-align: center;
+}
+
+strong {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+.test {
+    background-color: #1a09a0;
+    width: 200px;
+    height: 100px;
+    text-align: center;
     color: white;
 }
