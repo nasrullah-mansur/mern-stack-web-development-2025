@@ -1,39 +1,112 @@
-.main{
-    background-color: mediumaquamarine;
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Banner */
+.banner {
+    background-color: bisque;
+    padding: 80px 0;
+    /* background-image: url(../images/my-img.jpg); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.parent {
+    width: 800px;
     height: 500px;
-    /* display: flex; */
-    justify-content: center;
-    align-items: center;
-    /* position: relative; */
+    border: 2px solid black;
+    position: relative;
+    overflow: hidden;
 }
 
-.container-1{
-    width: 50%;
-    height: 400px;
+.parent .box {
+    width: 100px;
+    height: 100px;
     background-color: red;
-    /* background-image: url(/images/blog-1.png); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* background-position: center; */
-    /* background: url("/images/blog-1.png") no-repeat center/cover; */
-
     position: absolute;
-    bottom:0px ;
-    
+    top: 200px;
+    /* bottom: ; */
+    left: 50px;
+    /* right: ; */
+    z-index: -1;
 }
 
-.box-1{
-    height: 300px;
-    width: 300px;
-    background-color: rgb(255, 255, 255);
-    /* position: relative; */
-}
-.box-2{
-    height: 200px;
-    width: 200px;
-    background-color: rgb(255, 0, 225);
+.parent .box-2 {
+    width: 150px;
+    height: 150px;
+    background-color: green;
+    position: absolute;
+    right: -50px;
+    top: -50px;
     border-radius: 50%;
+}
+
+.parent a {
+    padding: 20px 50px;
+    border: 2px solid red;
+    display: inline-block;
+    margin-top: 20px;
+    color: red;
+    /* transition-duration: 1s;
+    transition-property: all;
+    transition-timing-function: ease; */
+    /* transition: all ease 1s; */
+    position: relative;
+    overflow: hidden;
+}
+
+/* .parent a:hover {
+    color: white;
+    background-color: red;
+} */
+
+.parent a span {
+    width: 30px;
+    height: 30px;
+    background-color: green;
+    /* border-radius: 50%; */
+    /* display: inline-block; */
     position: absolute;
-    right: 0px;
-    bottom: 0px;
+    top: -30px;
+    right: -30px;
+    transition: all ease 1s;
+    z-index: -1;
+}
+
+.parent a:hover span {
+    width: 500px;
+    height: 500px;
+}
+
+
+.box-3 {
+    width: 400px;
+    height: 400px;
+    background-color: blueviolet;
+    border-top-right-radius: 50px;
+}
+
+ul {
+    margin: 100px 0;
+}
+
+ul li::after {
+    content: " #";
 }
