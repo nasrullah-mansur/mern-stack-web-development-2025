@@ -48,10 +48,18 @@ a {
     justify-content: center;
 }
 
-.d-block{
+.d-inline-block {
     display: inline-block;
+}
+
+.d-block {
+    display: block;
 }
 
 .text-center{
     text-align: center;
+}
+
+.text-white {
+    color: white;
 }
