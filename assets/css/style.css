@@ -54,7 +54,11 @@ h4 {
 
 /* Heading */
 .header {
-    margin-top: 30px;
+
+    background-image: linear-gradient(to right, #CBD7EE, #DBDEFF);
+    /* padding-bottom: 10px;
+    padding-top: 30px; */
+    padding: 30px 0 10px 0;
 
     .logo {
         img {
@@ -103,6 +107,78 @@ h4 {
     }
 }
 
+/* hero start  */
+
+.hero{
+
+
+    .col{
+        width: 55%;
+    }
+
+    .col-1{
+        width: 45%;
+    } 
+
+    .content{
+        h1{
+            font-size: 48px;
+            font-weight: var(--font-bold);
+            line-height: 62px;
+            max-width: 810px;
+
+            u{
+                color: var(--primary-color);
+                display: block;
+            }
+        }
+
+        p{
+            font-size: 16px;
+            line-height: 26px;
+            font-weight: var(--font-normal);
+            max-width: 550px;
+            margin-top: 25px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .image{
+        img{
+            width: 100%;
+        }
+    }
+}
+
+/* partner start  */
+.partner{
+    margin: 70px 0;
+    
+
+    .second-container{
+        max-width: 940px;
+        margin: 0 auto;
+    }
+
+    h5{
+        font-size: 24px;
+        font-weight: 500;
+        text-align: center;
+        color: #0E1336;
+        margin-bottom: 30px;
+    }
+
+    .item-container{
+            gap: 15px;
+    }
+
+    .item{
+         width: calc(100% / 5);
+         height: 128px;
+          border: 1px solid #E5EDFF;
+         border-radius: 8px;   
+    }
+}
 
 
 
