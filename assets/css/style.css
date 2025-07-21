@@ -1,0 +1,30 @@
+/* .box {
+    width: 100%;
+    height: 100px;
+    background-color: red;
+}
+
+.offer {
+    margin-top: 80px;
+}
+
+.offer .container .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+}
+
+.offer .container .offer-item {
+    width: calc(100% / 3);
+    border: 1px solid green;
+    padding: 0 15px;
+}
+
+.offer .container .offer-item p {
+    text-align: justify;
+} */
+
+
+.advantage .advance-item h3 {
+    font-size: 22px;
+}
