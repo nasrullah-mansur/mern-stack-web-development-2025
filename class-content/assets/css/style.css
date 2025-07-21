@@ -121,6 +121,8 @@ h4 {
     }
 }
 
+
+
 /* hero start  */
 
 .hero{
@@ -183,11 +185,11 @@ h4 {
     }
 
     .item-container{
-            gap: 15px;
+        gap: 15px;
     }
 
     .item{
-         width: calc(100% / 5);
+         width: calc((100% / 5) - 15px);
          height: 128px;
           border: 1px solid #E5EDFF;
          border-radius: 8px;   
@@ -214,7 +216,7 @@ h4 {
     .item-container{
         gap: 30px;
         .item{
-            max-width: calc(100% /3);
+            width: calc((100% / 3) - 30px);
             background-color: #ffffff; 
             border-radius: 10px;
 
