@@ -1,0 +1,28 @@
+
+
+
+ul li:nth-child(2n - 1) {
+    color: red;
+}
+
+
+ul li:first-child {
+    color: green;
+}
+
+ul li:last-child {
+    color: blue;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 100px;
+    background-color: green;
+
+    box-shadow: 0 10px 0 10px #000;
+}
+
+h1 {
+    text-shadow: 5px 5px 2px blue;
+}
