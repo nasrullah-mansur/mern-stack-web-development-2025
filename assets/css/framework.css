@@ -47,3 +47,11 @@ a {
 .justify-center {
     justify-content: center;
 }
+
+.d-block{
+    display: inline-block;
+}
+
+.text-center{
+    text-align: center;
+}

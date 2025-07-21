@@ -14,6 +14,7 @@ body {
     font-family: var(--primary-font);
     color: var(--body-color);
     font-weight: var(--font-normal);
+    margin-bottom: 100px;
 }
 
 h1,
@@ -180,5 +181,122 @@ h4 {
     }
 }
 
+/* discover start  */
+
+.discover{
+    background-color: #F5F9FF;
+    padding: 50px 0;
+
+    h2{
+        text-align: center;
+        font-size: 36px;
+        font-weight: var(--font-bold);
+        margin-bottom: 40px;
+
+        span{
+            color: var(--primary-color);
+        }
+    }
+
+    .item-container{
+        gap: 30px;
+        .item{
+            max-width: calc(100% /3);
+            background-color: #ffffff; 
+            border-radius: 10px;
+
+            &:hover{
+                box-shadow: 15px 15px 20px var(--primary-color);
+            }
+             .image{
+                position: relative;
+                img{
+                    width: 100%;
+                }
+
+                p{
+                    position: absolute;
+                    top: 15px;
+                    right: 15px;
+                    z-index: 10;
+                    background-color: rgba(236, 228, 228, 0.5);
+                    padding: 5px;
+                    border-radius: 3px;
+                    color: black;
+                    
+                }
+             }
+
+             .discover-content{
+                padding: 15px 20px 20px 20px;
+
+                h4{
+                    font-size: 22px;
+                    margin-bottom: 7px;
+                }
+
+                .item-row{
+                    margin-bottom: 10px;
+                    margin-top: 13px;
+                   p{
+                    color: var(--primary-color);
+
+                    i{
+                        margin-right: 5px;
+                    }
+                   } 
+                }
+
+                .progress{
+                    height: 10px;
+                    width: 100%;
+                    display: block;
+                    background-color: #F5F9FF;
+                    border-radius: 10px;
+                    position: relative;
+                }
+
+                .progress::before{
+                    content: " ";
+                    width: 70%;
+                    height: 100%;
+                    border-radius: 10px;
+                    background-color: var(--primary-color);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 10;
+                }
+
+                .item-row-bottom{
+                    p{
+                        color: rgba(0, 0, 0, 0.8);
+                        font-weight: var(--font-bold);
+                    }
+                }
+
+                .discover-btn{
+                   margin-top: 30px;
+                   
+                   a{
+                    background-color: white;
+                    color: var(--primary-color);
+                    border: 1px solid #e7ecf5;
+
+                    &:hover{
+                      background-color: var(--primary-color);  
+                      color: white;
+                      border: none;
+                    }
+                   }
+                }
+             }
+        }
+    }
+
+    .discover-btn-bottom{
+        margin-top: 30px;
+    }
+}
 
 
