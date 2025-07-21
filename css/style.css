@@ -1,78 +1,96 @@
-/* Simple Selector */
-
 /* 
-    1. global/all selector "*"
-    2. tag name selector
-    3. class name selector "."
-    4. id name selector "#"
-
+    CSS Box Model
+    1. Margin
+    2. Padding
+    3. Border
 */
 
-/* * {
-    color: blue;
-} */
-
-/* h1 {
-    color: purple;
-} */
-
-/* .test {
-    color: yellow;
-} */
-
-/* #test-two {
-    color: blueviolet;
-} */
-
-/* h4 {
-    color: red;
-} */
-
-/* .myh4 {
-    color: blueviolet;
-} */
-
-
-.bg-red {
-    background-color: red;
-}
-
-.bg-red {
-    background-color: green;
-}
-
-p span {
-    color: red;
+body {
+    margin: 0;
 }
 
 
-h2 {
-    color: #1a09a0;
-    /* background-color: rgb(165, 42, 42, 1); */
-    font-size: 30px;
-    font-weight: normal;
-    font-style: italic;
-    text-decoration: none;
-    text-align: justify;
-    text-transform: capitalize;
-}
-
-h4 {
-    text-align: center;
-}
-
-strong {
-    text-align: center;
-}
-
-a {
-    text-decoration: none;
-}
-
-.test {
-    background-color: #1a09a0;
+.one {
     width: 200px;
-    height: 100px;
-    text-align: center;
-    color: white;
+    text-transform: uppercase;
+    text-align: justify;
+    background-color: green;
+
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+
+    /* padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px; */
+
+    /* padding: 20px 30px 40px 50px; */
+    /* padding: 20px 30px 40px; */
+    /* padding: 20px 30px; */
+    padding: 20px;
+
+
+    /* border-color: red;
+    border-width: 20px;
+    border-style: solid; */
+
+    border: 20px solid red;
+    box-sizing: border-box;
 }
+
+/* p {
+    background-color: beige;
+} */
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    text-transform: capitalize;
+    background-color: #8e44ad;
+    margin-right: 10px;
+    padding: 15px 25px;
+}
+
+/* services-full-area */
+.services-full-area {
+    /* background-color: #2980b9; */
+    /* height: 50px; */
+}
+
+.services-full-area .container {
+    width: 960px;
+    /* height: 300px; */
+    /* background-color: #22e6a8; */
+    border: 2px solid black;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* .services-full-area .container .service-item {
+    
+} */
+
+.services-full-area .service-item {
+    /* width: 33.3333333%; */
+    width: calc(100% / 3);
+    height: 200px;
+    padding-left: 15px;
+    box-sizing: border-box;
+}
+
+.services-full-area .c-one {
+    background-color: #d35400;
+}
+
+.services-full-area .c-two {
+    background-color: #2ecc71;
+    /* margin-left: auto;
+    margin-right: auto; */
+}
+
+.services-full-area .c-three {
+    background-color: #34495e;
+}
+
