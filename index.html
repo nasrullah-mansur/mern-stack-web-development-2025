@@ -1,89 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class - 13</title>
-
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="assets/css/all.min.css">
-    <link rel="stylesheet" href="assets/css/framework.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/favicon.jpg" type="image/jpg">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Responsive Practice</title>
     
+  </head>
+  <body>
+    <header>
+      <h1>Responsive Practice Page</h1>
+    </header>
 
     <div class="container">
-        <div class="box"></div>
+      <div class="column">
+        <h2>Column One</h2>
+        <p>
+          This column contains some text to demonstrate a responsive layout
+          using Flexbox.
+        </p>
+        <img
+          src="https://icon2.cleanpng.com/20231210/piv/transparent-smiley-face-yellow-smiley-face-with-closed-eyes-1710979323276.webp"
+          alt="Placeholder"
+          class="responsive"
+        />
+      </div>
+      <div class="column">
+        <h2>Column Two</h2>
+        <p>
+          This is the second column. Resize the screen to see how the layout
+          changes.
+        </p>
+        <img
+          src="https://icon2.cleanpng.com/lnd/20240531/qzv/ayx4q5edv.webp"
+          alt="Placeholder"
+          class="responsive"
+        />
+      </div>
     </div>
 
-    <!-- <div class="offer">
-        <div class="container">
-            <div class="row">
-                <div class="offer-item">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, incidunt numquam! Beatae numquam aperiam tempore velit quaerat? Quae quidem maiores cum commodi vero. Deserunt facere modi porro quo repudiandae cupiditate, vitae labore suscipit necessitatibus? Nemo reprehenderit cumque laudantium quidem eum laborum provident aliquam odit enim ex accusantium molestias, reiciendis quaerat.</p>
-                </div>
-                <div class="offer-item">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, incidunt numquam! Beatae numquam aperiam tempore velit quaerat? Quae quidem maiores cum commodi vero. Deserunt facere modi porro quo repudiandae cupiditate, vitae labore suscipit necessitatibus? Nemo reprehenderit cumque laudantium quidem eum laborum provident aliquam odit enim ex accusantium molestias, reiciendis quaerat.</p>
-                </div>
-                <div class="offer-item">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, incidunt numquam! Beatae numquam aperiam tempore velit quaerat? Quae quidem maiores cum commodi vero. Deserunt facere modi porro quo repudiandae cupiditate, vitae labore suscipit necessitatibus? Nemo reprehenderit cumque laudantium quidem eum laborum provident aliquam odit enim ex accusantium molestias, reiciendis quaerat.</p>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-
-
-    <div class="offer">
-        <div class="container">
-            <div class="row">
-                <div class="offer-item col col-4-of-12">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, incidunt numquam! Beatae numquam aperiam tempore velit quaerat? Quae quidem maiores cum commodi vero. Deserunt facere modi porro quo repudiandae cupiditate, vitae labore suscipit necessitatibus? Nemo reprehenderit cumque laudantium quidem eum laborum provident aliquam odit enim ex accusantium molestias, reiciendis quaerat.</p>
-                </div>
-                <div class="offer-item col col-4-of-12">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, incidunt numquam! Beatae numquam aperiam tempore velit quaerat? Quae quidem maiores cum commodi vero. Deserunt facere modi porro quo repudiandae cupiditate, vitae labore suscipit necessitatibus? Nemo reprehenderit cumque laudantium quidem eum laborum provident aliquam odit enim ex accusantium molestias, reiciendis quaerat.</p>
-                </div>
-                <div class="offer-item col col-4-of-12">
-                    <h4>Lorem ipsum dolor sit amet.</h4>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, incidunt numquam! Beatae numquam aperiam tempore velit quaerat? Quae quidem maiores cum commodi vero. Deserunt facere modi porro quo repudiandae cupiditate, vitae labore suscipit necessitatibus? Nemo reprehenderit cumque laudantium quidem eum laborum provident aliquam odit enim ex accusantium molestias, reiciendis quaerat.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="advantage">
-        <div class="container">
-            <div class="row">
-                <div class="col col-3-of-12 advance-item">
-                    <h3 class="text-primary">Lorem ipsum dolor sit.</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi labore harum ad recusandae qui dolorem enim animi quod magni. Nulla, dolor provident! Voluptate quod beatae harum obcaecati, ullam vel dolor.</p>
-                </div>
-                <div class="col col-3-of-12 advance-item">
-                    <h3 class="text-primary">Lorem ipsum dolor sit.</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi labore harum ad recusandae qui dolorem enim animi quod magni. Nulla, dolor provident! Voluptate quod beatae harum obcaecati, ullam vel dolor.</p>
-                </div>
-                <div class="col col-3-of-12 advance-item">
-                    <h3 class="text-primary">Lorem ipsum dolor sit.</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi labore harum ad recusandae qui dolorem enim animi quod magni. Nulla, dolor provident! Voluptate quod beatae harum obcaecati, ullam vel dolor.</p>
-                </div>
-                <div class="col col-3-of-12 advance-item">
-                    <h3 class="text-primary">Lorem ipsum dolor sit.</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eligendi labore harum ad recusandae qui dolorem enim animi quod magni. Nulla, dolor provident! Voluptate quod beatae harum obcaecati, ullam vel dolor.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</body>
+    <footer>&copy; 2025 Responsive Design Practice</footer>
+  </body>
 </html>
