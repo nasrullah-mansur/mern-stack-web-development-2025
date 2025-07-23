@@ -5,111 +5,95 @@
 }
 
 ul {
-    list-style: none;
+    /* list-style: none; */
 }
 
 a {
     text-decoration: none;
 }
 
-h1 {
-    font-size: 30px;
-    
-}
-
-.box {
-    margin-left: 100px;
-    width: 50px;
-    height: 50px;
+::selection {
     background-color: red;
-    transform: scale(1) rotate(60deg);
-    /* transform-origin: left bottom; */
-}
-
-.test {
-    width: 100px;
-    height: 40px;
-    background-color: blueviolet;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: white;
-    /* display: none; */
-    opacity: 0;
 }
 
-.test:hover {
-    /* display: block; */
-    opacity: 1;
+nav > ul {
+    list-style: none;
+    margin-left: 20px;
 }
 
-/* Header */
-
-header {
-    background-color: #f2f2f2;
-    padding: 20px 10px;
-    margin-bottom: 100px;
+nav ul .testli ~ li {
+    color: red;
 }
 
-header nav {
+input[type="file"]::file-selector-button {
+    background-color: red;
+}
 
-    > ul {
-        display: flex;
+/* div[class] {
 
-        li {
-            position: relative;
+}
 
-            &:hover ul {
-                /* display: block; */
-                opacity: 1;
-                visibility: visible;
-            }
-        }
+div[class~="test"] {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+} */
+
+/* div[class^="col-lg"] {
+    width: 200px;
+    height: 200px;
+    background-color: green;
+}
+
+img[src$=".png"] {
+
+} */
+
+
+/* input:disabled {
+    background-color: aquamarine;
+}
+
+input:focus {
+    border: 2px solid red;
+    outline: 0;
+}
+
+div:has(h2) {
+    background-color: red;
+} */
+
+
+div:not(.test3) {
+    color: red;
+}
+
+
+
+/* div h2 {
+    background-color: blue;
+} */
+
+
+.check {
+    display: flex;
+
+    span {
+        display: inline-block;
+        border-radius: 3px;
+        width: 20px;
+        height: 20px;
+        /* background-color: green; */
+        border: 2px solid green;
+        margin-right: 5px;
     }
 
-    ul {
-
-        li {
-
-            a {
-                display: block;
-                padding: 10px 20px;
-                color: #333;
-                text-transform: uppercase;
-                transition: all ease 0.3s;
-
-                &:hover {
-                    color: #fff;
-                    background-color: #007bff;
-                }
-            }
-        }
+    input {
+        display: none;
     }
 
-    /* Submenu */
-    ul ul {
-        width: 100%;
-        background-color: bisque;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        transition: all ease 1s;
-        /* display: none; */
-        opacity: 0;
-        visibility: hidden;
+    input:checked + span {
+        background-color: green;
     }
-    
-}
-
-
-form {
-    margin-top: 100px;
-}
-
-input[type="text"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
 }

@@ -1,16 +1,38 @@
-// "nasrullah"
-// 123 
 
-// true 
 
-// false
+// document.write('this is test');
+// console.log('this is log');
 
-// null 
+// window.alert("Hi kemon aso");
 
-// null 
+// prompt('Tomar boyos koto?');
 
-// undefined
 
-document.write("hello world");
+// var x = 10;
 
-console.log("this is a test message");
+// let x = 10;
+
+// const x = 10;
+
+
+// var test = 50;
+
+// var test = 100;
+
+ 
+
+// let test = 10;
+
+// test = 20;
+
+// const test = 10;
+// test = 20;
+
+// console.log(test);
+
+// const webName = website.com 
+
+
+let a = 3;
+
+
