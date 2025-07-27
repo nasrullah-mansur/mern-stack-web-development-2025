@@ -1,272 +1,82 @@
 
 
-// let output = 10;
+// let a = console;
 
-// output -= 2;
+// a.log('Hello console')
+
+let b = 10;
+let c = 5;
 
 
-// console.log(output);
-
-// let age = 18;
-
-// if(age == 18) {
-//     console.log("tumi boro hoye geco!!");
-// }
-
-// else {
-//     console.log("tumi ekhono soto!!")
+// if(b > c) {
+//     console.log('yes');
 // }
 
 
-let check = 200;
+// function test() {
 
-// if(check === "10") {
-//     console.log('milce');
-// } 
+//     let d = 20;
 
-// if(check !== "10") {
-//     console.log('milce');
-// } 
-
-// if(check <= 10) {
-//     console.log('milce');
-// } 
-
-
-// if(check > 20) {
-//     console.log('20 theke boro');
+//     console.log(d);
 // }
 
-// else if(check > 10) {
-//     console.log('10 theke boro');
-// }
-
-// else {
-//     console.log('mileni');
-// }
-
-// check > 20 ? console.log('20 theke boro') : console.log('mileni');
-
-// console.log("hello" + " " + "world");
-
-// let one = "hello";
-
-// one += " world";
-
-// console.log(one);
+// test()
 
 
-// let studentName = "khaled";
+// function test2() {
+//     let abc = 10;
 
-// let studentAge = 20;
-
-// if(studentName == "khaled" || studentAge == 18) {
-//     console.log('this is actual student');
-// }
-
-
-// let test1 = 10;
-
-// if(!test1 == 10) {
-//     console.log('milce');
-// }
-
-// Truthy
-// 1. string 
-// 2. integer 
-// 3. array
-// 4. object 
-// 5. true
-
-// falsy 
-// 1. false
-// 2. null 
-// 3. undefined
-// 4. ""
-// 5. 0
-
-
-// if(!"abcd") {
-//     console.log('ami sottobadi');
-// }
-
-
-function test() {
-    let a = 10;
-    let output = "";
-
-    if(a = 10) {
-        output = "this is 10";
-    } 
-    else {
-        output = "this is empty value";
-    }
-
-    console.log(output);
-}
-
-
-// test();
-
-// Index number;
-
-let studentNames = ["khaled", "jayed", "rashed"];
-let myInfo = [
-    "Khaled",
-    25,
-    "Dhaka",
-    "01987878787",
-    "myemail@gmail.com",
-    "Bangladesh",
-    "Islam"
-];
-
-// key, value
-
-let myInfoObj = {
-    name: "khaled",
-    age: 25,
-    address: "Dhaka",
-    phoneNumber: "01728619733",
-    email: "nasrullah.cit.bd@gmail.com",
-    country: "Bangladesh",
-    religion: "Islam"
-}
-
-// console.log(myInfo);
-// console.log(myInfoObj);
-
-let myArr2 = [
-    "test data",
-    123,
-    undefined,
-    null,
-    [1,2,3,4],
-    function (){},
-    {
-        name: 'name'
-    }
-];
-
-let myObj2 = {
-    fName: "khaled",
-    lName: "hasan",
-    fullName: function() {
-        console.log(myObj2.fName + " " + myObj2.lName);
-    },
-    skill: ['php', 'javascript', 'html', 'css']
-}
-
-// console.log(myObj2);
-// console.log(myObj2.lName);
-
-// myObj2.fullName();
-
-
-
-function newFunction(fName, lName) {
-    console.log(fName + " " + lName);
-}
-
-// newFunction("khaled", "hassan");
-
-function anotherFn() {
-    
-    let a = 10;
-    let b = 20;
-
-    let output = a + b;
-
-    // console.log(output);
-
-    let authUser = true;
-
-    return true;
-}
-
-
-// console.log(anotherFn());
-// document.write(anotherFn());
-
-
-// let fName = "khaled";
-// let lName = "hassan";
-
-// let student = {
-//     // fName: fName,
-//     // lName: lName
-//     fName,
-//     lName,
-//     email: function(emailProperty) {
-//         console.log(emailProperty);
+//     function aaa() {
+//         console.log(abc);
 //     }
 // }
 
-// // console.log(student);
+// test2()
+
+// console.log(abc);
 
 
-// student.email('email@email.com');
+function abcd() {
+    // 
+    // 
+    // 
+    // 
+    // 
+    // 
+    return 100;
+}
 
 
+// let abcd() = 100;
+// let a = 100;
 
-// function test2(prop) {
-//     // let prop = 12345;
-//     console.log(prop);
-// }
+// let j = abcd();
 
-// test2(12345);
-// test2("00000000000000000000")
-// test2("hello dunia")
+// console.log(j);
 
 
-
-// function test3(fname, lname) {
-//     console.log(fname + " " + lname);
-// }
-
-// test3("khaled", "hassan");
-// test3("jayed", "hassan");
+// console.log(abcd());
 
 
-function test3(fname, lname, age) {
-    let studentName = fname + " " + lname;
-    let studentStatus = "";
+function xyz() {
+    let a = 5;
+    let b = 10;
 
-    if(age >= 18) {
-        studentStatus = "tumi boro hoye geso";
-    }
+    console.log(a + b);
 
-    else {
-        studentStatus = "tumi ekhono soto";
-    }
+    console.log('this is from function');
 
-    let result = "hello " + studentName + " " + studentStatus;
-
-    return result;
+    return 1000;
     
-
 }
 
-// "hello khaled hassan tumi boro hoye geso"
-test3("khaled", "hassan", 20);
 
-// console.log(test3("khaled", "hassan", 20));
+// xyz(); // 1000
 
-// let mrKhaled = test3("khaled", "hassan", 20);
-
-// console.log(mrKhaled);
-
-
-// let a = undefined;
-
-// console.log(a);
-
-
-function abc(a) {
-    console.log(a);
-}
-
-abc('hello');
+// console.log(xyz());
 
 
 
+// let abcde = 1000;
+
+// abcde
