@@ -1,57 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yellow Cafe</title>
+  <link rel="stylesheet" href="src/style.css">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="shortcut icon" href="public/images/favicon.png" type="image/png">
 </head>
 <body>
-    
 
-    <!-- <div class="w-[1140px] mx-auto flex flex-wrap mb-[50px]">
-        <div class="bg-red-500 flex-1/4">
-            <h2>Item One</h2>
-        </div>
-        <div class="bg-green-500 flex-1/4">
-            <h2>Item Two</h2>
-        </div>
-        <div class="bg-blue-500 flex-1/4">
-            <h2>Item Three</h2>
-        </div>
-        <div class="bg-yellow-500 flex-1/4">
-            <h2>Item Four</h2>
-        </div>
-    </div> -->
-
-
-    <div class="lg:w-[1080px] md:w-[670px] mx-auto grid lg:grid-cols-4 md:grid-cols-2 ">
-        <div class="bg-red-500">
-            <h2 class="">Item One</h2>
-        </div>
-        <div class="bg-[url(../images/bg.png)]">
-            <h2>Item Two</h2>
-        </div>
-        <div class="bg-blue-500">
-            <h2>Item Three</h2>
-        </div>
-        <div class="bg-yellow-500">
-            <h2>Item Four</h2>
-        </div>
+  
+  <div class="w-[235px] bg-white h-screen p-[20px] fixed left-0 top-0">
+    <div class="h-[50px] flex items-center">
+      <a href="#">
+        <img src="public/images/logo.png" alt="Yellow Cafe">
+      </a>
     </div>
+    <nav class="mt-[20px]">
+      <ul>
+        <li class="mb-[15px]">
+          <a href="#" class="flex bg-primary px-[10px] py-[8px] rounded-[6px]">
+            <img class="w-[20px]" src="public/images/carts.svg" alt="carts icon">
+            <span class="block pl-[10px] text-white">Food Carts</span>
+          </a>
+        </li>
 
+        <li class="mb-[15px]">
+          <a href="#" class="flex px-[10px] py-[8px]">
+            <img class="w-[20px]" src="public/images/orders.svg" alt="order icon">
+            <span class="block pl-[10px] text-body">Orders</span>
+          </a>
+        </li>
 
-    <div></div>
+        <li class="mb-[15px]">
+          <a href="#" class="flex px-[10px] py-[8px]">
+            <img class="w-[20px]" src="public/images/favorits.svg" alt="favorite icon">
+            <span class="block pl-[10px] text-body">Favorites</span>
+          </a>
+        </li>
 
-    <div>
-        <div>
-            
-        </div>
+      </ul>
+    </nav>
+    <div class="bg-primary h-[80px] rounded-[10px] center-box absolute lef-[20px] bottom-[20px] w-[calc(100%-40px)]">
+      <p class="text-white">
+        <span class="block font-[700] text-[18px]">2 Orders</span>
+        <span>in queue</span>
+      </p>
     </div>
-    
+  </div>
+
+  <div class=" fixed left-[255px] top-0">
+    <h4 id="testh4">asfasf</h4>
+  </div>
 
 
-    <script src="assets/js/custom.js"></script>
+
+
+  <script src="src/main.js"></script>
 </body>
 </html>
