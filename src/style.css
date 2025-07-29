@@ -26,6 +26,51 @@
     .center-box {
         @apply flex justify-center items-center;
     }
+
+    .menu-li {
+        @apply px-[10px] py-[8px] flex hover:bg-amber-100 rounded-[6px] duration-300 ease-in-out;
+
+        svg {
+            @apply fill-body;
+        }
+
+        span {
+            @apply block pl-[10px] text-body;
+        }
+    }
+
+    .menu-li-active {
+        @apply flex bg-primary px-[10px] py-[8px] rounded-[6px];
+
+        svg {
+            @apply fill-white;
+        }
+
+        span {
+            @apply block pl-[10px] text-white;
+        }
+    }
+
+    .food-category {
+        @apply bg-white rounded-xl p-3 flex flex-col justify-center items-center cursor-pointer;
+
+        img {
+            @apply w-[56px];
+        }
+
+        span {
+            @apply text-[16px] font-[500] block pt-1.5;
+        }
+    }
+
+    .food-category-active {
+        @apply border-2 border-amber-300;
+
+        span {
+            @apply text-primary;
+        }
+    }
+
 }
 
 /* Custom helper class */

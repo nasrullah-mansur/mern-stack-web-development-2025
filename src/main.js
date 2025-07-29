@@ -1,10 +1,23 @@
 
-let myh4 = document.getElementById("testh4");
-let liList = document.getElementsByTagName('li');
+let h1 = document.getElementById('test');
 
-let divs = document.querySelectorAll("*");
+// let myObj = {
+//     name: 'khaled',
+//     age: 25
+// }
 
-console.log(divs);
+// myObj.name = 'another student';
 
+// myObj.address = "Dhaka"
+
+// console.log(myObj);
+
+// h1.innerText = "abol tabol"
+
+// console.dir(h1);
+// console.dir(h1.attributes);
+// console.dir(h1.classList);
+// console.dir(h1.innerHTML);
+// console.dir(h1.innerText);
 
 
