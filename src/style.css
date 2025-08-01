@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @import "tailwindcss";
+@plugin 'tailwind-scrollbar';
 
 @theme {
     --color-primary: #F8B602;
@@ -10,10 +11,7 @@
 /* Common CSS */
 @layer base {
     body {
-        background-color: #F2F2F2;
-        font-family: "Inter", sans-serif;
-        font-weight: 400;
-        font-size: 14px;
+        @apply bg-[#F2F2F2] font-["Inter"] font-[400] text-[14px];
     }
 }
 
@@ -21,10 +19,6 @@
 @layer components {
     .btn-custom {
         @apply p-3 bg-amber-600 rounded-2xl text-white uppercase inline-block
-    }
-
-    .center-box {
-        @apply flex justify-center items-center;
     }
 
     .menu-li {
@@ -75,9 +69,8 @@
 
 /* Custom helper class */
 @layer utilities {
-    .my-class {
-        text-decoration: underline;
-        font-style: italic;
+    .center-box {
+        @apply flex justify-center items-center;
     }
 }
 
