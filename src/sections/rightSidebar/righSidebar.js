@@ -1,0 +1,1 @@
+let rightSidebar = "this is rightSidebar section";
