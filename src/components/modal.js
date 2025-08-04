@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="src/style.css">
-</head>
-<body>
-    <div class="bg-black/35 w-full h-screen fixed top-0 left-0">
+
+export function cartViewModal() {
+    return `<div class="bg-black/35 w-full h-screen fixed top-0 left-0">
         <div class="w-[800px] rounded-[15px] bg-white flex mx-auto mt-[80px] overflow-hidden">
             <img class="w-[40%] object-cover" src="public/images/food-1.png" alt="food">
             <div class="w-[60%] p-[30px]">
@@ -27,10 +20,9 @@
 
                 <div class="flex gap-x-2">
                     <button class="bg-primary px-4 py-2 rounded-[6px] text-white cursor-pointer" type="button">Add to cart - <span class="font-[600]">$500</span></button>
-                    <button class="bg-black px-4 py-2 rounded-[6px] text-white cursor-pointer" type="button">Cancel</button>
+                    <button class="bg-black px-4 py-2 rounded-[6px] text-white cursor-pointer closeModal" type="button">Cancel</button>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-</html>
+    </div>`
+}

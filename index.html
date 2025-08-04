@@ -18,12 +18,8 @@
 
   <div class=" fixed left-[255px] top-0">
     <!-- Header start -->
-     <div class="w-[calc(100vw-255px)] flex justify-between items-center h-[70px] pr-[20px]">
-      <h1 class="text-[24px] font-[700]">Food Carts</h1>
-      <div class="flex h-[45px] bg-white px-[15px] rounded-full">
-        <img class="w-[25px]" src="public/images/search.svg" alt="search">
-        <input class="w-full block ml-2 focus:outline-0" type="search" placeholder="Search your food here ...">
-      </div>
+     <div class="w-[calc(100vw-255px)] flex justify-between items-center h-[70px] pr-[20px]" id="headerSection">
+      
      </div>
     <!-- Header end -->
 
@@ -32,254 +28,17 @@
       <!-- Left-side start -->
       <div class="w-[calc(100vw-555px)] overflow-y-scroll scrollbar-none h-[calc(100vh-70px)]">
         <!-- Banner start -->
-        <div class="rounded-xl overflow-hidden">
-          <img class="w-full" src="public/images/banner.png" alt="banner img">
+        <div class="rounded-xl overflow-hidden" id="bannerSection">
+          
         </div>
         <!-- Banner end -->
 
         <!-- Food category start -->
-         <h2 class="text-4 font-[500] py-3">Explore Categories </h2>
-         <div class="grid grid-cols-5 gap-x-4">
-          <div class="food-category food-category-active">
-            <img src="public/images/cat-1.png" alt="category">
-            <span>Burger</span>
-          </div>
-
-          <div class="food-category">
-            <img src="public/images/cat-1.png" alt="category">
-            <span>Burger</span>
-          </div>
-
-          <div class="food-category">
-            <img src="public/images/cat-1.png" alt="category">
-            <span>Burger</span>
-          </div>
-
-          <div class="food-category">
-            <img src="public/images/cat-1.png" alt="category">
-            <span>Burger</span>
-          </div>
-
-          <div class="food-category">
-            <img src="public/images/cat-1.png" alt="category">
-            <span>Burger</span>
-          </div>
-         </div>
+         <div id="foodCategory"></div>
         <!-- Food category end -->
 
         <!-- Food carts start -->
-        <h2 class="text-4 font-[500] py-3 mt-4">Foods & Drinks</h2>
-         <div class="grid grid-cols-4 gap-4 mb-[100px]">
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-active.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="bg-white rounded-lg">
-            <div class="relative">
-              <img class="w-full cursor-pointer" src="public/images/food-1.png" alt="food">
-              <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
-            </div>
-            <div class="flex justify-between items-center px-2 pt-2">
-              <div>
-                <h4 class="text-body text-3">Burger Name</h4>
-                <strong class="text-xl">$ 250.00</strong>
-              </div>
-              <div class="bg-primary p-1.5 rounded-md">
-                <img class="w-3 cursor-pointer" src="public/images/plus.svg" alt="plus icon">
-              </div>
-            </div>
-            <div class="flex justify-between px-2 pb-2">
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/star.svg" alt="star img">
-                <span class="text-body pl-1.5 text-[12px]">4.8</span>
-              </div>
-              <div class="flex items-center">
-                <img class="w-3" src="public/images/clock.svg" alt="clock img">
-                <span class="text-body pl-1.5 text-[12px]">25 - 30 mins</span>
-              </div>
-            </div>
-          </div>
-          
-         </div>
-
+        <div id="foodCartSection"></div>
         <!-- Food carts end -->
       </div>
 
@@ -301,7 +60,7 @@
     <!-- Body end -->
   </div>
 
-
+  <div id="modalSection"></div>
 
 
   <script type="module" src="src/main.js"></script>
