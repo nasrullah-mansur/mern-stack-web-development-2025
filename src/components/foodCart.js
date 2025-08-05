@@ -1,7 +1,7 @@
 function foodCart(cartObj) {
     return `<div class="bg-white rounded-lg overflow-hidden">
             <div class="relative">
-              <img class="w-full h-[130px] cursor-pointer foodCartItem" src="public/images/foods/${cartObj.image_url}" alt="food">
+              <img data-food_id="${cartObj.id}" class="w-full h-[130px] cursor-pointer foodCartItem" src="public/images/foods/${cartObj.image_url}" alt="food">
               <img class="absolute top-2 right-2 cursor-pointer" src="public/images/love-unactive.svg" alt="icon">
             </div>
             <div class="flex justify-between items-center px-2 pt-2">

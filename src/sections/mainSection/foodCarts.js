@@ -12,25 +12,34 @@ let foodCartItemsContainer = `<div class="grid grid-cols-4 gap-4 mb-[100px]">${f
 
 let foodCartSectionElements = foodCartsHeader + foodCartItemsContainer;
 
-let modalSection = document.getElementById('modalSection');
 let foodCartSection = document.getElementById('foodCartSection');
+let modalDiv = document.getElementById('modalSection');
 
 // Add modal;
-foodCartSection.addEventListener('click', function(event) {
-    let classNameCheck = event.target.classList.contains('foodCartItem')
-    if(classNameCheck == true) {
-        modalSection.innerHTML = cartViewModal();
-    }  
+foodCartSection.addEventListener('click', function(e) {
+    let targetFoodItemId = e.target.getAttribute('data-food_id');
+
+    let targetFoodItemObj = foodCartItems.find(function(item) {
+        return item.id == targetFoodItemId;
+    })
+
+    console.log(targetFoodItemObj);
+    
+    let targetTagCheck = e.target.classList.contains("foodCartItem");
+    if(targetTagCheck == true) {
+        modalDiv.innerHTML = cartViewModal(targetFoodItemObj);
+    }
 })
 
-// Remove Modal;
-modalSection.addEventListener('click', function(event) {
-    let classNameCheck = event.target.classList.contains("closeModal");
-    if(classNameCheck == true) {
-        modalSection.innerHTML = "";
+// Remove modal;
+modalDiv.addEventListener('click', function(e) {
+    let targetTagCheck = e.target.classList.contains("closeModal");
+    if(targetTagCheck == true) {
+        modalDiv.innerHTML = ""
     }
     
 })
+
 
 
 
