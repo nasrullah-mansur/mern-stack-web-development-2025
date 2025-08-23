@@ -1,8 +1,12 @@
 
-const FoodCartSection = () => {
+const FoodCartSection = ({ title, children }) => {
+
+    // let title = props.title; 
+
     return (
         <div>
-            food cart section
+            {title}
+            The children is: {children}
         </div>
     )
 }

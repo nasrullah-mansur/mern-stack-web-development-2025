@@ -1,40 +1,39 @@
 import FoodCartItem from "./features/foodCart/FoodCartItem";
+import FoodCartSection from "./features/foodCart/FoodCartSection";
 import Footer from "./sections/Footer";
 import Header from "./sections/Header";
 
 
-const foodCartData: object[] = [
-  {
-    id: 1,
-    title: "this is food one"
-  },
-  {
-    id: 2,
-    title: "this is food one"
-  },
-  {
-    id: 3,
-    title: "this is food one"
-  }
-]
-
-const myName: string = "nasrullah mansur";
-
-
 const App = () => {
+
+  const myFavoriteComponent = "headerasf";
+
+  const myTitle = "this is title from app component"
+
+  const people = [
+    'Creola Katherine Johnson: mathematician',
+    'Mario José Molina-Pasquel Henríquez: chemist',
+    'Mohammad Abdus Salam: physicist',
+    'Percy Lavon Julian: chemist',
+    'Subrahmanyan Chandrasekhar: astrophysicist'
+  ];
+
+  let renderPeople = people.map(item => <li>{item}</li>)
+
   return (
     <>
-      <Header />
-      {myName}
 
+      {myFavoriteComponent == "header" ? <Header /> : <Footer />}
 
-      {foodCartData.map(item => <FoodCartItem />)}
+      <FoodCartSection title="this is food cart section title from app component">
+        <FoodCartItem />
 
+        <ul>
+          {renderPeople}
+        </ul>
+      </FoodCartSection>
 
-
-
-
-      <Footer />
+      <hr />
     </>
   )
 }

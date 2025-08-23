@@ -1,8 +1,12 @@
 
-const Header = () => {
+const Header = (props) => {
+
+    console.log(props);
+
+
     return (
         <header>
-            this is header section
+            this is header
         </header>
     )
 }
