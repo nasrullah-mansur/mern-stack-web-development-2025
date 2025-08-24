@@ -70,3 +70,33 @@ let myCar1:ICar<ICarObj> = [{
     name: 'abc',
     color: 'red',
 }]
+
+
+// let uus: any = 123;
+
+// (uus as number).toFixed(2);
+
+type Obj2<T> = {
+    name: string;
+    email: string;
+    option: T
+}
+
+let obj2: Obj2<number[]>  = {
+    name: "my name",
+    email: 'email@email.com',
+    option: [1,2,3],
+}
+
+type Fn1 = (property: string) => void;
+
+let fn1: Fn1 = (property) => {
+
+    // return "abc";
+}
+
+let fnVal = fn1("abcd")
+
+console.log(fnVal);
+
+
