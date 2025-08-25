@@ -5,7 +5,7 @@ import { themeModeHandler } from "../../utils/themeModeHandler";
 
 function Header() {
 
-    const [theme, setTheme] = useState("dark-theme");
+    const [theme, setTheme] = useState("light-theme");
 
     const clickHandler = () => {
         // themeModeHandler("dark-mode");
@@ -27,7 +27,7 @@ function Header() {
     return (
         <header className="py-3 border-b border-b-gray-300 px-2">
             <div className="container mx-auto flex justify-between items-center">
-                <span className="font-bold text-2xl dark:text-white">BOOK SELL {theme}</span>
+                <span className="font-bold text-2xl text-theme">BOOK SELL</span>
                 <div className="flex gap-x-2">
                     <button onClick={clickHandler} className="p-2 border border-gray-300 cursor-pointer rounded-md">
                         <MdOutlineLightMode className="dark:text-white" />
