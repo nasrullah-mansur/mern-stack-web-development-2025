@@ -8,7 +8,7 @@ function Header() {
     const [theme, setTheme] = useState("light-theme");
 
     const clickHandler = () => {
-        // themeModeHandler("dark-mode");
+
         setTheme((prev) => {
             if (prev == "dark-theme") {
                 return "light-theme";

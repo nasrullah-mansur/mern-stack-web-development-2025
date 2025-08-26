@@ -1,6 +1,5 @@
-import ProductCart from "../../features/product/ProductCart";
+
 import ProductList from "../../features/product/ProductList";
-import IndexPage from "../../pages/Index";
 import Footer from "./Footer";
 import Header from "./Header";
 import LeftSidebar from "./LeftSidebar";

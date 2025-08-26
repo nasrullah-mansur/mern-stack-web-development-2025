@@ -21,6 +21,9 @@ const ProductCart = () => {
                     <FaRegHeart className="dark:text-white" />
                 </button>
             </div>
+
+
+
         </div>
     )
 }
