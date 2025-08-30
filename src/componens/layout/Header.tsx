@@ -4,8 +4,9 @@ import { useEffect, useState } from "react";
 import { themeModeHandler } from "../../utils/themeModeHandler";
 import CartPopup from "../../features/cart/CartPopup";
 import type { ICart } from "../../interfaces/interface";
+import type { ISetCartQuantity } from "./MainLayout";
 
-function Header({ carts }: { carts: ICart[] }) {
+function Header({ carts, setCarts }: { carts: ICart[], setCarts: ISetCartQuantity }) {
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -44,7 +45,7 @@ function Header({ carts }: { carts: ICart[] }) {
                 </div>
             </header>
 
-            {isOpen && <CartPopup carts={carts} isOpen={() => setIsOpen(false)} />}
+            {isOpen && <CartPopup setCarts={setCarts} carts={carts} isOpen={() => setIsOpen(false)} />}
         </>
     );
 }

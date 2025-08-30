@@ -2,10 +2,11 @@
 import { IoCloseSharp } from "react-icons/io5";
 import CartList from "./CartList";
 import type { ICart } from "../../interfaces/interface";
+import type { ISetCartQuantity } from "../../componens/layout/MainLayout";
 
 
 
-function CartPopup({ isOpen, carts }: { isOpen: () => void; carts: ICart[] }) {
+function CartPopup({ isOpen, carts, setCarts }: { isOpen: () => void; carts: ICart[], setCarts: ISetCartQuantity }) {
 
     const isCartExist = carts.length > 0 ? true : false;
 
@@ -46,7 +47,7 @@ function CartPopup({ isOpen, carts }: { isOpen: () => void; carts: ICart[] }) {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <CartList carts={carts} />
+                                    <CartList setCarts={setCarts} carts={carts} />
                                 </tbody>
                             </table>
                         </div>

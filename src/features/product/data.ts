@@ -7,6 +7,7 @@ export interface IProduct {
     rating: number;
     price: number;
     description: string;
+    isFavorite: boolean;
 }
 
 

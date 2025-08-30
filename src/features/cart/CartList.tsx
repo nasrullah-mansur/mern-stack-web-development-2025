@@ -1,11 +1,12 @@
+import type { ISetCartQuantity } from "../../componens/layout/MainLayout";
 import type { ICart } from "../../interfaces/interface";
 import CartItem from "./CartItem";
 
-function CartList({ carts }: { carts: ICart[] }) {
+function CartList({ carts, setCarts }: { carts: ICart[], setCarts: ISetCartQuantity }) {
 
     return (
         <>
-            {carts.map(cart => <CartItem key={cart.id} cart={cart} />)}
+            {carts.map(cart => <CartItem setCarts={setCarts} key={cart.id} cart={cart} />)}
         </>
     );
 }
