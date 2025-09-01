@@ -1,10 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './App'
 import './index.css'
+import TaskProvider from './store/todo/TastProvider'
+
+
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <TaskProvider />
   </StrictMode>,
 )
+
+

@@ -1,66 +1,50 @@
 
 
-import { useState } from "react";
+import { useReducer } from "react";
+import { TODO_CASE } from "../../../store/todo/todoInterface";
+import { todoReducer } from "../../../store/todo/todoReducer";
 import AddTask from "./AddTask";
 import TodoItem from "./TodoItem";
-import type { TodoStateType } from "../../../store/todo/todoInterface";
 
 function TodoList() {
-
-
-
-
-    const [todos, setTodos] = useState<TodoStateType>([]);
+    const [todos, dispatch] = useReducer(todoReducer, []);
 
     const handleAddTodo = (text: string) => {
-        setTodos([
-            ...todos,
-            {
-                id: todos.length + 1,
-                title: text,
-                status: "Doing"
+        dispatch({
+            type: TODO_CASE.ADD_TODO,
+            payload: {
+                title: text
             }
-        ]);
+        })
     }
 
     const handleUpdateTodo = (id: number, title: string) => {
-        console.log(id, title);
-        const updateTodos: TodoStateType = todos.map(todo => {
-            if (todo.id === id) {
-                return {
-                    ...todo,
-                    title: title
-                }
+        dispatch({
+            type: TODO_CASE.UPDATE_TODO,
+            payload: {
+                id,
+                title,
             }
-            return todo;
         })
-
-        setTodos(updateTodos)
     }
 
     const handleDeleteTodo = (id: number) => {
-        const updateTodos = todos.filter(todo => todo.id != id);
-        setTodos(updateTodos)
+        dispatch({
+            type: TODO_CASE.DELETE_TODO,
+            payload: {
+                id: id
+            }
+        });
     }
 
     const handleStatusChangeTodo = (id: number) => {
-
-        const updateTodos: TodoStateType = todos.map(todo => {
-            if (todo.id === id) {
-                return {
-                    ...todo,
-                    status: todo.status === "Doing" ? "Done" : "Doing",
-                }
+        dispatch({
+            type: TODO_CASE.STATUS_CHANGE,
+            payload: {
+                id,
             }
-            return todo;
-
-        });
-
-        setTodos(updateTodos);
-
-
+        })
     }
-
 
     return (
         <div className="container max-w-2xl mx-auto p-2 my-5 ">
