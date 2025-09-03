@@ -1,10 +1,8 @@
-import TodoList from "./components/modules/todo/TodoList";
 
-function App() {
-
-    return (
-        <TodoList />
-    );
+const App = () => {
+  return (
+    <div>This is clear project</div>
+  )
 }
 
 export default App;

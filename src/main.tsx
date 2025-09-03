@@ -1,14 +1,14 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import './index.css'
-import TaskProvider from './store/todo/TastProvider'
-
-
+import { RouterProvider } from 'react-router'
+import router from '@/routers/index.tsx'
+import { ThemeProvider } from '@/components/theme-provider'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <TaskProvider />
+    <ThemeProvider>
+      <RouterProvider router={router} />
+    </ThemeProvider>
   </StrictMode>,
 )
-
-
