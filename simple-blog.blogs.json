@@ -1,0 +1,306 @@
+[{
+  "_id": {
+    "$oid": "68b823098d40a589fc8908c5"
+  },
+  "title": "Beginner’s Guide to SEO in 2025",
+  "slug": "beginner's-guide-to-seo-in-2025",
+  "categoryId": {
+    "$oid": "68b821828d40a589fc8908a9"
+  },
+  "details": "Search Engine Optimization (SEO) is critical for website visibility. In this beginner’s guide, we cover the latest strategies for on-page, off-page, and technical SEO.",
+  "createdAt": {
+    "$date": "2025-09-03T11:14:17.686Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:14:17.686Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822428d40a589fc8908b2"
+  },
+  "title": "Understanding Cookie Compliance",
+  "slug": "understanding-cookie-compliance",
+  "categoryId": {
+    "$oid": "68b821778d40a589fc8908a5"
+  },
+  "details": "In this post, we explore what makes a cookie banner compliant with Google and GDPR requirements, and how to implement one effectively.",
+  "createdAt": {
+    "$date": "2025-09-03T11:10:58.459Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:10:58.459Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b823328d40a589fc8908cd"
+  },
+  "title": "Why Page Speed Matters for SEO and UX",
+  "slug": "why-page-speed-matters-for-seo-and-ux",
+  "categoryId": {
+    "$oid": "68b821828d40a589fc8908a9"
+  },
+  "details": "Page speed affects both search engine ranking and user experience. Discover techniques for measuring and improving load times on your site.",
+  "createdAt": {
+    "$date": "2025-09-03T11:14:58.276Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:14:58.276Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822588d40a589fc8908b4"
+  },
+  "title": "Top 5 Tools for Managing Cookies on Your Website",
+  "slug": "top-5-tools-for-managing-cookies-on-your-website",
+  "categoryId": {
+    "$oid": "68b821778d40a589fc8908a5"
+  },
+  "details": "Managing cookies is essential for compliance and user trust. In this article, we review the top 5 tools like Cookiebot and others that can help you handle cookie consent with ease.",
+  "createdAt": {
+    "$date": "2025-09-03T11:11:20.149Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:11:20.149Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b8222c8d40a589fc8908b0"
+  },
+  "title": "My First Blog Post",
+  "slug": "my-first-blog-post",
+  "categoryId": {
+    "$oid": "68b821778d40a589fc8908a5"
+  },
+  "details": "This is a sample blog post content. You can write your introduction, main points, and conclusion here.",
+  "createdAt": {
+    "$date": "2025-09-03T11:10:36.709Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:10:36.709Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822b28d40a589fc8908bb"
+  },
+  "title": "My First Blog Post",
+  "slug": "my-first-blog-post",
+  "categoryId": {
+    "$oid": "68b8217c8d40a589fc8908a7"
+  },
+  "details": "This is a sample blog post content. You can write your introduction, main points, and conclusion here.",
+  "createdAt": {
+    "$date": "2025-09-03T11:12:50.209Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:12:50.209Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b823138d40a589fc8908c7"
+  },
+  "title": "The Importance of Mobile-First Design",
+  "slug": "the-importance-of-mobile-first-design",
+  "categoryId": {
+    "$oid": "68b821828d40a589fc8908a9"
+  },
+  "details": "More than half of web traffic comes from mobile devices. Learn why mobile-first design is essential and how to optimize your site for mobile users.",
+  "createdAt": {
+    "$date": "2025-09-03T11:14:27.637Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:14:27.637Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b8231d8d40a589fc8908c9"
+  },
+  "title": "Top 10 Mistakes to Avoid in Web Development",
+  "slug": "top-10-mistakes-to-avoid-in-web-development",
+  "categoryId": {
+    "$oid": "68b821828d40a589fc8908a9"
+  },
+  "details": "From ignoring accessibility to poor code structure, we list the top 10 mistakes developers often make and how to avoid them.",
+  "createdAt": {
+    "$date": "2025-09-03T11:14:37.321Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:14:37.321Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b823728d40a589fc8908cf"
+  },
+  "title": "Getting Started with JavaScript Frameworks",
+  "slug": "getting-started-with-javascript-frameworks",
+  "categoryId": {
+    "$oid": "68b821888d40a589fc8908ab"
+  },
+  "details": "JavaScript frameworks like React, Vue, and Angular make web development faster and easier. This article helps beginners choose the right framework and start building.",
+  "createdAt": {
+    "$date": "2025-09-03T11:16:02.423Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:16:02.423Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b8237c8d40a589fc8908d1"
+  },
+  "title": "The Rise of AI in Web Development",
+  "slug": "the-rise-of-ai-in-web-development",
+  "categoryId": {
+    "$oid": "68b821888d40a589fc8908ab"
+  },
+  "details": "Artificial intelligence is transforming web development by enabling smarter chatbots, automated testing, and personalized user experiences.",
+  "createdAt": {
+    "$date": "2025-09-03T11:16:12.290Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:16:12.290Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b823858d40a589fc8908d3"
+  },
+  "title": "Best Practices for Secure Web Applications",
+  "slug": "best-practices-for-secure-web-applications",
+  "categoryId": {
+    "$oid": "68b821888d40a589fc8908ab"
+  },
+  "details": "Security is crucial in modern web applications. Learn about common vulnerabilities like XSS and SQL injection, and how to protect your applications.",
+  "createdAt": {
+    "$date": "2025-09-03T11:16:21.132Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:16:21.132Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822c68d40a589fc8908bf"
+  },
+  "title": "Top 5 Tools for Managing Cookies on Your Website",
+  "slug": "top-5-tools-for-managing-cookies-on-your-website",
+  "categoryId": {
+    "$oid": "68b8217c8d40a589fc8908a7"
+  },
+  "details": "Managing cookies is essential for compliance and user trust. In this article, we review the top 5 tools like Cookiebot and others that can help you handle cookie consent with ease.",
+  "createdAt": {
+    "$date": "2025-09-03T11:13:10.610Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:13:10.610Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822ff8d40a589fc8908c3"
+  },
+  "title": "Why Cookie Compliance Matters for Your Business",
+  "slug": "why-cookie-compliance-matters-for-your-business",
+  "categoryId": {
+    "$oid": "68b8217c8d40a589fc8908a7"
+  },
+  "details": "Many businesses underestimate the importance of cookie compliance. This post explains the legal, ethical, and trust-building reasons to implement a proper cookie consent solution.",
+  "createdAt": {
+    "$date": "2025-09-03T11:14:07.236Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:14:07.236Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b823268d40a589fc8908cb"
+  },
+  "title": "A Quick Guide to Website Accessibility",
+  "slug": "a-quick-guide-to-website-accessibility",
+  "categoryId": {
+    "$oid": "68b821828d40a589fc8908a9"
+  },
+  "details": "Accessibility ensures your website can be used by everyone, including people with disabilities. This post outlines key accessibility practices to follow.",
+  "createdAt": {
+    "$date": "2025-09-03T11:14:46.894Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:14:46.894Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822678d40a589fc8908b8"
+  },
+  "title": "Step-by-Step Guide to Setting Up a Cookie Banner",
+  "slug": "step-by-step-guide-to-setting-up-a-cookie-banner",
+  "categoryId": {
+    "$oid": "68b821778d40a589fc8908a5"
+  },
+  "details": "Learn how to set up a cookie consent banner on your website. We’ll walk you through the process from choosing a tool to customizing the design and ensuring GDPR compliance.",
+  "createdAt": {
+    "$date": "2025-09-03T11:11:35.166Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:11:35.166Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b8225e8d40a589fc8908b6"
+  },
+  "title": "Why Cookie Compliance Matters for Your Business",
+  "slug": "why-cookie-compliance-matters-for-your-business",
+  "categoryId": {
+    "$oid": "68b821778d40a589fc8908a5"
+  },
+  "details": "Many businesses underestimate the importance of cookie compliance. This post explains the legal, ethical, and trust-building reasons to implement a proper cookie consent solution.",
+  "createdAt": {
+    "$date": "2025-09-03T11:11:26.841Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:11:26.841Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822cf8d40a589fc8908c1"
+  },
+  "title": "Why Cookie Compliance Matters for Your Business",
+  "slug": "why-cookie-compliance-matters-for-your-business",
+  "categoryId": {
+    "$oid": "68b8217c8d40a589fc8908a7"
+  },
+  "details": "Many businesses underestimate the importance of cookie compliance. This post explains the legal, ethical, and trust-building reasons to implement a proper cookie consent solution.",
+  "createdAt": {
+    "$date": "2025-09-03T11:13:19.635Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:13:19.635Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "68b822bc8d40a589fc8908bd"
+  },
+  "title": "Understanding Cookie Compliance",
+  "slug": "understanding-cookie-compliance",
+  "categoryId": {
+    "$oid": "68b8217c8d40a589fc8908a7"
+  },
+  "details": "In this post, we explore what makes a cookie banner compliant with Google and GDPR requirements, and how to implement one effectively.",
+  "createdAt": {
+    "$date": "2025-09-03T11:13:00.206Z"
+  },
+  "updatedAt": {
+    "$date": "2025-09-03T11:13:00.206Z"
+  }
+}]

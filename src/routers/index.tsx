@@ -1,22 +1,31 @@
-import AboutPage from "@/pages/About";
-import ContactPage from "@/pages/Contact";
+
+import MainLayout from "@/components/layout/MainLayout";
+import BlogByCategory from "@/components/modules/blog/BlogByCategory";
+import { blogByCategoryLoader, getIndexPageData } from "@/loader/loader";
 import IndexPage from "@/pages/Index";
 import { createBrowserRouter } from "react-router";
 
 
 const router = createBrowserRouter([
+
     {
         path: '/',
-        Component: IndexPage,
+        Component: MainLayout,
+        children: [
+            {
+                index: true,
+                Component: IndexPage,
+                loader: getIndexPageData
+            },
+            {
+                path: "/blog-by-category/:slug",
+                Component: BlogByCategory,
+                loader: blogByCategoryLoader
+            }
+        ],
     },
-    {
-        path: "/about",
-        Component: AboutPage,
-    },
-    {
-        path: '/contact',
-        Component: ContactPage,
-    }
+
+
 ]);
 
 export default router;
