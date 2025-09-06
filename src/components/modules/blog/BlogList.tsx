@@ -1,6 +1,5 @@
 import BlogItem from "@/components/modules/blog/BlogItem";
 
-
 function BlogList({ blogs }) {
 
     return (

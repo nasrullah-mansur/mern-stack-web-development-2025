@@ -1,6 +1,4 @@
-
-const baseURL = "http://localhost:3000";
-
+import { baseURL } from "@/utils/baseApi";
 
 export const getIndexPageData = async () => {
     const categoryResponse = await fetch(`${baseURL}/api/category/all`)

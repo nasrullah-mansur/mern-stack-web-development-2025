@@ -5,7 +5,7 @@ import { Link } from "react-router";
 export function CategoryList({ categories }) {
 
     return (
-        <ToggleButtonGroup defaultSelectedKeys={["left"]}>
+        <ToggleButtonGroup className="flex flex-wrap" defaultSelectedKeys={["left"]}>
             {categories.data.map(category => (
                 <Button
                     className="cursor-pointer"

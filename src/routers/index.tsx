@@ -1,7 +1,9 @@
 
 import MainLayout from "@/components/layout/MainLayout";
-import BlogByCategory from "@/components/modules/blog/BlogByCategory";
 import { blogByCategoryLoader, getIndexPageData } from "@/loader/loader";
+import BlogByCategory from "@/pages/BlogByCategory";
+import CreateBlog from "@/pages/CreateBlog";
+import CreateCategory from "@/pages/CreateCategory";
 import IndexPage from "@/pages/Index";
 import { createBrowserRouter } from "react-router";
 
@@ -18,9 +20,17 @@ const router = createBrowserRouter([
                 loader: getIndexPageData
             },
             {
-                path: "/blog-by-category/:slug",
+                path: "blog-by-category/:slug",
                 Component: BlogByCategory,
-                loader: blogByCategoryLoader
+                loader: blogByCategoryLoader,
+            },
+            {
+                path: "create-blog",
+                Component: CreateBlog
+            },
+            {
+                path: "create-category",
+                Component: CreateCategory,
             }
         ],
     },
