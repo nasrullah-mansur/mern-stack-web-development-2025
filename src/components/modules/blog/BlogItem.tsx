@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router";
 
 
 function BlogItem({ blog }) {
@@ -13,7 +14,9 @@ function BlogItem({ blog }) {
             </CardHeader>
 
             <CardFooter>
-                <Button variant="outline" size="lg" className="cursor-pointer">Read More</Button>
+                <Button variant="outline" size="lg" className="cursor-pointer">
+                    <Link to={`/blog/${blog.slug}`}>Read More</Link>
+                </Button>
             </CardFooter>
         </Card>
     );

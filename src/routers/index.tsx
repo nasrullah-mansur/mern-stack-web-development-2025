@@ -5,6 +5,8 @@ import BlogByCategory from "@/pages/BlogByCategory";
 import CreateBlog from "@/pages/CreateBlog";
 import CreateCategory from "@/pages/CreateCategory";
 import IndexPage from "@/pages/Index";
+import UpdateBlog from "@/pages/UpdateBlog";
+import ViewBlog from "@/pages/ViewBlog";
 import { createBrowserRouter } from "react-router";
 
 
@@ -17,12 +19,14 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: IndexPage,
-                loader: getIndexPageData
+                loader: getIndexPageData,
+                hydrateFallbackElement: <div className="text-center py-8">loading...</div>
             },
             {
                 path: "blog-by-category/:slug",
                 Component: BlogByCategory,
                 loader: blogByCategoryLoader,
+                hydrateFallbackElement: <div>loading...</div>
             },
             {
                 path: "create-blog",
@@ -31,6 +35,14 @@ const router = createBrowserRouter([
             {
                 path: "create-category",
                 Component: CreateCategory,
+            },
+            {
+                path: "blog/:slug",
+                Component: ViewBlog,
+            },
+            {
+                path: 'update-blog/:slug',
+                Component: UpdateBlog
             }
         ],
     },

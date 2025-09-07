@@ -1,7 +1,6 @@
 
 import BlogList from "@/components/modules/blog/BlogList";
 import { CategoryList } from "@/components/modules/blog/CategoryList";
-import type { IBlog } from "@/type";
 import { useLoaderData } from "react-router";
 
 function IndexPage() {
