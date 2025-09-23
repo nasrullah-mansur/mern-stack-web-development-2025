@@ -1,45 +1,62 @@
-import { Router } from "express";
+import { Router, type Request, type Response } from "express";
+import client from "../../config/mongodb.js";
+import { ObjectId } from "mongodb";
 
 export const todoRouter = Router();
 
 
-todoRouter.get('/all-todos', (req, res) => {
+todoRouter.get('/all-todos', async (req: Request, res: Response) => {
     // pull array data from database;
-    res.json([
-        {
-            id: 1,
-            todo: "this is dummy todo"
-        }
-    ])
+
+    const db = await client.db('todo');
+    const collection = await db.collection('todo');
+
+    const todos = await collection.find({}).toArray();
+
+    res.json(todos)
 })
 
-todoRouter.post("/create-todo", (req, res) => {
+todoRouter.post("/create-todo", async (req: Request, res: Response) => {
     // set body data to database;
     let data = req.body;
+    const db = await client.db('todo');
+    const collection = await db.collection('todo');
+    await collection.insertOne(data);
+
     res.json(data);
 })
 
-todoRouter.post('/delete-todo/:id', (req, res) => {
+todoRouter.post('/delete-todo/:id', async (req: Request, res: Response) => {
     // Delete todo from database;
 
     const todoId = req.params?.id;
+    const db = await client.db('todo');
+    const collection = await db.collection('todo');
 
-    console.log(todoId);
-
+    await collection.deleteOne({ _id: new ObjectId(todoId) })
 
     res.json({
         message: "todo item delete successfully"
     })
 })
 
-todoRouter.get('/test', (req, res) => {
 
-    let params = req.query
+todoRouter.post('/update-todo/:id', async (req: Request, res: Response) => {
+    const todoId = req.params.id;
 
-    console.log(params);
+    const db = await client.db('todo');
+    const collection = await db.collection('todo');
 
+    await collection.updateOne(
+        { _id: new ObjectId(todoId) },
+        {
+            $set: req.body,
+        }
+    );
 
     res.json({
-        message: "successfully"
+        message: "item updated successfully"
     })
+
 })
+
