@@ -1,5 +1,17 @@
 import { Router } from "express";
-import { todoRouter } from "../modules/todo/todo.route.js";
+import { CategoryRouter } from "../modules/category/category.route.js";
 export const router = Router();
-router.use("/todo", todoRouter);
+const routeList = [
+    {
+        prefix: "/category",
+        route: CategoryRouter,
+    },
+    // {
+    //     prefix: "/blog",
+    //     route: BlogRouter,
+    // }
+];
+routeList.forEach(route => {
+    router.use(route.prefix, route.route);
+});
 //# sourceMappingURL=index.js.map

@@ -1,4 +1,2 @@
-import { MongoClient } from "mongodb";
-declare const client: MongoClient;
-export default client;
+export {};
 //# sourceMappingURL=mongodb.d.ts.map
