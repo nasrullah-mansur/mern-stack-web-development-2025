@@ -13,6 +13,7 @@ import {
     HeartPulse,
     Scale,
 } from "lucide-react";
+import { Link } from "react-router";
 
 const categories = [
     { name: "Technology", totalPosts: 10, icon: Cpu },
@@ -54,11 +55,14 @@ const MainSection = () => {
                                 </h3>
 
                                 <Button
+                                    asChild
                                     size="sm"
                                     className="mt-6 shadow-none group-hover:translate-x-1 transition-transform"
                                     variant="outline"
                                 >
-                                    Read more <ChevronRight className="ml-1 h-4 w-4" />
+                                    <Link to="/single-blog/abc">
+                                        Read more <ChevronRight className="ml-1 h-4 w-4" />
+                                    </Link>
                                 </Button>
                             </CardContent>
                         </Card>

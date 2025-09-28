@@ -1,12 +1,19 @@
 Blog Website
 
 Website UI 
-1. header / navbar
-2. banner / call to action 
-3. category
-4. blog 
-5. search 
-6. footer 
+1. header / navbar - done
+2. banner / call to action - done 
+3. category - done 
+4. blog - done
+5. search - done 
+6. footer - done 
+7. blog details - done  
+8. contact us page - done 
+9. login page 
+10. registration page 
+11. forgot page 
+12. reset password page 
+13. admin panel 
 
 
 website backend 
