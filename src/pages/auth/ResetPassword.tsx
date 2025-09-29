@@ -37,7 +37,7 @@ function ResetPassword() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center mt-12">
+        <div className="py-10 flex items-center justify-center mt-12">
             <div className="max-w-xs w-full flex flex-col items-center">
 
                 <p className="mt-4 text-xl font-semibold tracking-tight">

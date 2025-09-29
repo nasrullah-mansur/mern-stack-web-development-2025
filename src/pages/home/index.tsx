@@ -1,13 +1,11 @@
-import Banner from "@/pages/home/Banner";
-import MainSection from "@/pages/home/MainSection";
+import Blogs from "@/components/modules/blog/Blog";
+import Banner from "@/components/pages/home/Banner";
 
-function HomePage() {
+export default function HomePage() {
     return (
         <>
             <Banner />
-            <MainSection />
+            <Blogs />
         </>
-    );
+    )
 }
-
-export default HomePage;

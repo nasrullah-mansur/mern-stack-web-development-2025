@@ -1,27 +1,28 @@
-
-import FrontLayout from "@/components/layout/FrontLayout";
+import AppLayout from "@/components/layout/AppLayout";
+import DashboardLayout from "@/components/layout/DashboardLayout";
+import Post from "@/components/modules/blog/Post";
 import Login from "@/pages/auth/Login";
 import ResetPassword from "@/pages/auth/ResetPassword";
 import SendOtp from "@/pages/auth/SendOtp";
 import SignUp from "@/pages/auth/Signup";
 import Contact from "@/pages/contact/Contact";
 import HomePage from "@/pages/home";
-import SingleBlog from "@/pages/single-blog";
 import { createBrowserRouter } from "react-router";
+
+
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        Component: FrontLayout,
+        path: '/',
+        Component: AppLayout,
         children: [
             {
                 index: true,
-                Component: HomePage,
-            }
-            ,
+                Component: HomePage
+            },
             {
-                path: "/single-blog/:slug",
-                Component: SingleBlog
+                path: "/post/:slug",
+                Component: Post,
             },
             {
                 path: "/contact",
@@ -43,9 +44,13 @@ const router = createBrowserRouter([
                 path: "/reset-password",
                 Component: ResetPassword
             }
+        ],
+    },
+    {
+        path: "me",
+        Component: DashboardLayout,
 
-        ]
     }
-])
+]);
 
 export default router;

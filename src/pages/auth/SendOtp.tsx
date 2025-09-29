@@ -26,7 +26,7 @@ function SendOtp() {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center">
+        <div className="py-10 flex items-center justify-center">
             <div className="max-w-xs w-full flex flex-col items-center">
 
                 <p className="mt-4 text-xl font-semibold tracking-tight">

@@ -1,145 +1,147 @@
-
-import { z } from "zod"
-
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "sonner"
-
-const formSchema = z.object({
-    full_name: z
-        .string()
-        .trim()
-        .min(1, "Please write your full name")
-        .max(50, "Full name must be at most 50 characters"),
-
-    message: z
-        .string()
-        .trim()
-        .min(1, "Please write your full name")
-        .max(50, "Full name must be at most 50 characters"),
-
-    email: z
-        .string()
-        .trim()
-        .min(1, "Please write your email")
-        .email("Please enter a valid email address")
-        .max(50, "Email must be at most 50 characters"),
-
-    phone: z
-        .string()
-        .trim()
-        .min(10, "Phone number must be at least 10 digits")
-        .max(15, "Phone number must be at most 15 digits")
-        .regex(/^[0-9+\-() ]+$/, "Phone number contains invalid characters"),
-});
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { MailIcon, MapPinIcon, MessageCircle, PhoneIcon } from "lucide-react";
+import { Link } from "react-router";
 
 
-
-
-function Contact() {
-
-    // 1. Define your form.
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-            full_name: "",
-            email: "",
-            phone: "",
-            message: ""
-        },
-    })
-
-
-    // 2. Define a submit handler.
-    function onSubmit(values: z.infer<typeof formSchema>) {
-
-        console.log(values)
-
-        toast.success("Thank you for your message")
-
-        form.reset()
-    }
-
-    return (
-        <>
-            <div className="w-full flex flex-col gap-16 items-center justify-center px-6 py-16 mt-10">
-                <div className="text-center max-w-3xl">
-                    <h1 className="mt-6 text-4xl sm:text-5xl md:text-6xl lg:text-7xl md:leading-[1.2] font-semibold tracking-tighter">
-                        Contact Us
-                    </h1>
+const Contact = () => (
+    <div className="min-h-screen flex items-center justify-center py-16 ">
+        <div className=" xl:px-0 max-w-(--breakpoint-xl) mx-auto">
+            <b className="text-muted-foreground uppercase font-semibold text-sm">
+                Contact Us
+            </b>
+            <h2 className="mt-3 text-3xl md:text-4xl font-semibold tracking-tight">
+                Chat with our friendly team!
+            </h2>
+            <p className="mt-3 text-base sm:text-lg text-muted-foreground">
+                We&apos;d love to hear from you. Please fill out this form or shoot us
+                an email.
+            </p>
+            <div className="mt-24 grid lg:grid-cols-2 gap-16 md:gap-10">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-12">
+                    <div>
+                        <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
+                            <MailIcon />
+                        </div>
+                        <h3 className="mt-6 font-semibold text-xl">Email</h3>
+                        <p className="my-2.5 text-muted-foreground">
+                            Our friendly team is here to help.
+                        </p>
+                        <Link
+                            className="font-medium text-primary"
+                            to="mailto:akashmoradiya3444@gmail.com"
+                        >
+                            akashmoradiya3444@gmail.com
+                        </Link>
+                    </div>
+                    <div>
+                        <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
+                            <MessageCircle />
+                        </div>
+                        <h3 className="mt-6 font-semibold text-xl">Live chat</h3>
+                        <p className="my-2.5 text-muted-foreground">
+                            Our friendly team is here to help.
+                        </p>
+                        <Link className="font-medium text-primary" to="#">
+                            Start new chat
+                        </Link>
+                    </div>
+                    <div>
+                        <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
+                            <MapPinIcon />
+                        </div>
+                        <h3 className="mt-6 font-semibold text-xl">Office</h3>
+                        <p className="my-2.5 text-muted-foreground">
+                            Come say hello at our office HQ.
+                        </p>
+                        <Link
+                            className="font-medium text-primary"
+                            to="https://map.google.com"
+                            target="_blank"
+                        >
+                            100 Smith Street Collingwood <br /> VIC 3066 AU
+                        </Link>
+                    </div>
+                    <div>
+                        <div className="h-12 w-12 flex items-center justify-center bg-primary/5 dark:bg-primary/10 text-primary rounded-full">
+                            <PhoneIcon />
+                        </div>
+                        <h3 className="mt-6 font-semibold text-xl">Phone</h3>
+                        <p className="my-2.5 text-muted-foreground">
+                            Mon-Fri from 8am to 5pm.
+                        </p>
+                        <Link
+                            className="font-medium text-primary"
+                            to="tel:akashmoradiya3444@gmail.com"
+                        >
+                            +1 (555) 000-0000
+                        </Link>
+                    </div>
                 </div>
+
+                {/* Form */}
+                <Card className="bg-accent shadow-none py-0">
+                    <CardContent className="p-6 md:p-8">
+                        <form>
+                            <div className="grid md:grid-cols-2 gap-x-8 gap-y-6">
+                                <div className="col-span-2 sm:col-span-1">
+                                    <Label htmlFor="firstName">First Name</Label>
+                                    <Input
+                                        placeholder="First name"
+                                        id="firstName"
+                                        className="mt-2 bg-white h-10 shadow-none"
+                                    />
+                                </div>
+                                <div className="col-span-2 sm:col-span-1">
+                                    <Label htmlFor="lastName">Last Name</Label>
+                                    <Input
+                                        placeholder="Last name"
+                                        id="lastName"
+                                        className="mt-2 bg-white h-10 shadow-none"
+                                    />
+                                </div>
+                                <div className="col-span-2">
+                                    <Label htmlFor="email">Email</Label>
+                                    <Input
+                                        type="email"
+                                        placeholder="Email"
+                                        id="email"
+                                        className="mt-2 bg-white h-10 shadow-none"
+                                    />
+                                </div>
+                                <div className="col-span-2">
+                                    <Label htmlFor="message">Message</Label>
+                                    <Textarea
+                                        id="message"
+                                        placeholder="Message"
+                                        className="mt-2 bg-white shadow-none"
+                                        rows={6}
+                                    />
+                                </div>
+                                <div className="col-span-2 flex items-center gap-2">
+                                    <Checkbox id="acceptTerms" className="bg-background" />
+                                    <Label htmlFor="acceptTerms" className="gap-0">
+                                        You agree to our
+                                        <Link to="#" className="underline ml-1">
+                                            terms and conditions
+                                        </Link>
+                                        <span>.</span>
+                                    </Label>
+                                </div>
+                            </div>
+                            <Button className="mt-6 w-full" size="lg">
+                                Submit
+                            </Button>
+                        </form>
+                    </CardContent>
+                </Card>
             </div>
-
-            <div className="max-w-screen-md mx-auto my-16 bg-accent p-6 rounded-2xl">
-                <Form {...form}>
-                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-                        <FormField
-                            control={form.control}
-                            name="full_name"
-                            render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>Full Name</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="full name" {...field} />
-                                    </FormControl>
-
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="email"
-                            render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>Email</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="email" {...field} />
-                                    </FormControl>
-
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <FormField
-                            control={form.control}
-                            name="phone"
-                            render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>phone</FormLabel>
-                                    <FormControl>
-                                        <Input placeholder="phone" {...field} />
-                                    </FormControl>
-
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-
-                        <FormField
-                            control={form.control}
-                            name="message"
-                            render={({ field }) => (
-                                <FormItem className="w-full">
-                                    <FormLabel>Your message</FormLabel>
-                                    <FormControl>
-                                        <Textarea placeholder="your message "  {...field} />
-                                    </FormControl>
-
-                                    <FormMessage />
-                                </FormItem>
-                            )}
-                        />
-                        <Button className="w-full" type="submit">Send Message</Button>
-                    </form>
-                </Form>
-            </div>
-        </>
-    );
-}
+        </div>
+    </div>
+);
 
 export default Contact;
