@@ -2,7 +2,8 @@ import dotenv from "dotenv";
 dotenv.config();
 const envVarsFn = () => {
     const requiredEnvVariables = [
-        "PORT"
+        "PORT",
+        "DB_URI"
     ];
     requiredEnvVariables.forEach((key) => {
         if (!process.env[key]) {
@@ -11,6 +12,7 @@ const envVarsFn = () => {
     });
     return {
         PORT: process.env.PORT,
+        DB_URI: process.env.DB_URI,
     };
 };
 export const envVars = envVarsFn();

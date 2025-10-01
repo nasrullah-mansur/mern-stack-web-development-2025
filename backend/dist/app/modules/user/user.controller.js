@@ -1,11 +1,25 @@
 import httpStatus from "http-status-codes";
-const getUsers = (req, res, next) => {
+import { User } from "./user.model.js";
+import catchAsync from "../../../utils/catchAsync.js";
+import { UserServices } from "./user.services.js";
+const getUsers = catchAsync(async (req, res, next) => {
+    const users = await User.find({});
     res.status(httpStatus.OK).json({
         status: "success",
-        message: "all user retrieved successfully"
+        message: "all user retrieved successfully",
+        data: users
     });
-};
+});
+const createUser = catchAsync(async (req, res, next) => {
+    const user = await UserServices.createUser(req, res);
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "user create successfully",
+        user: user,
+    });
+});
 export const UserController = {
-    getUsers
+    getUsers,
+    createUser
 };
 //# sourceMappingURL=user.controller.js.map

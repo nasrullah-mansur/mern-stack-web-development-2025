@@ -1,5 +1,6 @@
 type EnvType = {
     PORT: string;
+    DB_URI: string;
 };
 export declare const envVars: EnvType;
 export {};
