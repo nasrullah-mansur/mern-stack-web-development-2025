@@ -17,10 +17,12 @@
   },
   "dependencies": {
     "@types/express": "^5.0.3",
+    "bcryptjs": "^3.0.2",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "http-status-codes": "^2.3.0",
     "mongodb": "^6.20.0",
-    "mongoose": "^8.18.3"
+    "mongoose": "^8.18.3",
+    "zod": "^4.1.11"
   }
 }
