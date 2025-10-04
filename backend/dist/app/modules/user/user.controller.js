@@ -1,7 +1,7 @@
 import httpStatus from "http-status-codes";
 import { User } from "./user.model.js";
-import catchAsync from "../../../utils/catchAsync.js";
 import { UserServices } from "./user.services.js";
+import catchAsync from "../../utils/catchAsync.js";
 const getUsers = catchAsync(async (req, res, next) => {
     const users = await User.find({});
     res.status(httpStatus.OK).json({

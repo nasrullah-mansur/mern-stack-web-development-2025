@@ -11,7 +11,7 @@ export const createUserValidation = z.object({
 
     password: z
         .string()
-        .min(3, { message: "Password must be at least 6 characters long" }),
+        .min(1, { message: "Password must be at least 6 characters long" }),
 
     avatar: z
         .string()
@@ -20,4 +20,5 @@ export const createUserValidation = z.object({
 
     isVerified: z.boolean().default(false),
     isPremium: z.boolean().default(false),
+
 });
