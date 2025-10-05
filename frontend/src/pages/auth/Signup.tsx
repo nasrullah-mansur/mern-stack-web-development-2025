@@ -1,7 +1,9 @@
+import PasswordInput from "@/components/password-input";
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useSignUpMutation } from "@/redux/modules/user/user.api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
@@ -10,6 +12,7 @@ import { z } from "zod";
 
 const formSchema = z
     .object({
+        name: z.string().min(1, "Please enter your name"),
         email: z.string().trim().email("Please enter a valid email address"),
         password: z
             .string()
@@ -25,16 +28,27 @@ const formSchema = z
 
 function SignUp() {
 
+    const [signUp] = useSignUpMutation();
+
     const form = useForm<z.infer<typeof formSchema>>({
         defaultValues: {
+            name: "",
             email: "",
             password: "",
             confirm_password: ""
         },
         resolver: zodResolver(formSchema),
     });
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
-        console.log(data);
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+
+        try {
+            const res = await signUp(data)
+            console.log(res);
+
+        } catch (error) {
+            console.log(error);
+
+        }
     };
 
     return (
@@ -54,6 +68,25 @@ function SignUp() {
                         className="w-full space-y-4"
                         onSubmit={form.handleSubmit(onSubmit)}
                     >
+
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Name</FormLabel>
+                                    <FormControl>
+                                        <Input
+                                            type="text"
+                                            placeholder="Name"
+                                            className="w-full"
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                         <FormField
                             control={form.control}
                             name="email"
@@ -79,12 +112,7 @@ function SignUp() {
                                 <FormItem>
                                     <FormLabel>Password</FormLabel>
                                     <FormControl>
-                                        <Input
-                                            type="password"
-                                            placeholder="Password"
-                                            className="w-full"
-                                            {...field}
-                                        />
+                                        <PasswordInput placeholder="Password" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -97,12 +125,7 @@ function SignUp() {
                                 <FormItem>
                                     <FormLabel>Confirm password</FormLabel>
                                     <FormControl>
-                                        <Input
-                                            type="password"
-                                            placeholder="Password"
-                                            className="w-full"
-                                            {...field}
-                                        />
+                                        <PasswordInput placeholder="Confirm Password" {...field} />
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
