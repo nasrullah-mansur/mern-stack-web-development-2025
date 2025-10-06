@@ -11,7 +11,7 @@ export const createUserValidation = z.object({
 
     password: z
         .string()
-        .min(1, { message: "Password must be at least 6 characters long" }),
+        .min(3, { message: "Password must be at least 6 characters long" }),
 
     avatar: z
         .string()

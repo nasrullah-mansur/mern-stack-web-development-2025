@@ -8,7 +8,7 @@ export const globalErrorHandler = (err: any, req: Request, res: Response, next: 
     const responseError = {
         status: "error",
         message: "",
-        errors: []
+        errors: err
     }
 
 

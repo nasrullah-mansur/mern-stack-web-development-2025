@@ -4,7 +4,7 @@ export const globalErrorHandler = (err, req, res, next) => {
     const responseError = {
         status: "error",
         message: "",
-        errors: []
+        errors: err
     };
     // Jod Error Check;
     if (err.name == "ZodError") {

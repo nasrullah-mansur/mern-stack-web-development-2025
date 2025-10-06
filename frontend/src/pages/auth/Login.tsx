@@ -2,18 +2,22 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useLoginMutation } from "@/redux/modules/auth/auth.api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { Link } from "react-router";
+import { toast } from "sonner";
 
 import { z } from "zod";
 
 const formSchema = z.object({
     email: z.string().email(),
-    password: z.string().min(8, "Password must be at least 8 characters long"),
+    password: z.string().min(3, "Password must be at least 8 characters long"),
 });
 
 function Login() {
+
+    const [login] = useLoginMutation();
 
     const form = useForm<z.infer<typeof formSchema>>({
         defaultValues: {
@@ -22,8 +26,22 @@ function Login() {
         },
         resolver: zodResolver(formSchema),
     });
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
-        console.log(data);
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+
+        try {
+            const res = await login(data).unwrap()
+            if (res.status == "success") {
+                toast.success("You are logged in successfully")
+            }
+
+            console.log(res);
+
+
+        } catch (error) {
+            toast.error("Log in failed")
+            console.log(error);
+
+        }
     };
 
     return (

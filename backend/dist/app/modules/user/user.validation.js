@@ -8,7 +8,7 @@ export const createUserValidation = z.object({
         .email({ message: "Please provide a valid email address" }),
     password: z
         .string()
-        .min(1, { message: "Password must be at least 6 characters long" }),
+        .min(3, { message: "Password must be at least 6 characters long" }),
     avatar: z
         .string()
         .url({ message: "Avatar must be a valid URL" })
