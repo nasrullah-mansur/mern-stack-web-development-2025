@@ -1,4 +1,5 @@
 import { User } from "../user/user.model.js";
+import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 const login = async (payload, res) => {
     const { email, password } = payload;
@@ -18,14 +19,23 @@ const login = async (payload, res) => {
             message: "password doesn't match"
         });
     }
-    const loginUser = {
+    const tokenPayload = {
         name: isUserExist?.name,
         email: isUserExist?.email,
         avatar: isUserExist?.avatar,
         isVerified: isUserExist?.isVerified,
         isPremium: isUserExist?.isPremium
     };
-    return loginUser;
+    const accessToken = jwt.sign(tokenPayload, "secret", {
+        expiresIn: "1h",
+    });
+    res.cookie("accessToken", accessToken, {
+        httpOnly: true,
+        secure: false
+    });
+    return {
+        accessToken,
+    };
 };
 export const AuthServices = {
     login

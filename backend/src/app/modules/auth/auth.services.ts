@@ -1,6 +1,7 @@
 import type { Response } from "express";
 import { User } from "../user/user.model.js";
 import type { IAuth } from "./auth.interface.js"
+import jwt from "jsonwebtoken"
 
 import bcrypt from "bcryptjs";
 
@@ -28,7 +29,7 @@ const login = async (payload: IAuth, res: Response) => {
     }
 
 
-    const loginUser = {
+    const tokenPayload = {
         name: isUserExist?.name,
         email: isUserExist?.email,
         avatar: isUserExist?.avatar,
@@ -36,8 +37,19 @@ const login = async (payload: IAuth, res: Response) => {
         isPremium: isUserExist?.isPremium
     }
 
+    const accessToken = jwt.sign(tokenPayload, "secret", {
+        expiresIn: "1h",
+    })
 
-    return loginUser;
+    res.cookie("accessToken", accessToken, {
+        httpOnly: true,
+        secure: false
+    })
+
+
+    return {
+        accessToken,
+    };
 
 
 }
