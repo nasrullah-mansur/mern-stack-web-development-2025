@@ -6,7 +6,7 @@ const userApi = baseApi.injectEndpoints({
             query: (data) => ({
                 method: "POST",
                 url: "/user/create-user",
-                body: data
+                data: data
             }),
         }),
     }),

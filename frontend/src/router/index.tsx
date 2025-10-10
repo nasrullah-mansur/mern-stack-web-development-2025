@@ -7,6 +7,7 @@ import SendOtp from "@/pages/auth/SendOtp";
 import SignUp from "@/pages/auth/Signup";
 import Contact from "@/pages/contact/Contact";
 import HomePage from "@/pages/home";
+import { withAuth } from "@/utils/withAuth";
 import { createBrowserRouter } from "react-router";
 
 
@@ -48,7 +49,7 @@ const router = createBrowserRouter([
     },
     {
         path: "me",
-        Component: DashboardLayout,
+        Component: withAuth(DashboardLayout),
 
     }
 ]);
