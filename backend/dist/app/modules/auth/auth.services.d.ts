@@ -6,5 +6,6 @@ export declare const AuthServices: {
         accessToken: string;
     }>;
     me: (req: Request, res: Response) => Promise<string | jwt.JwtPayload>;
+    sendOtp: (req: Request, res: Response) => Promise<void>;
 };
 //# sourceMappingURL=auth.services.d.ts.map

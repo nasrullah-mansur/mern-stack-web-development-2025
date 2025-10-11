@@ -25,9 +25,32 @@ const me = catchAsync(async (req: Request, res: Response, next: NextFunction) =>
     })
 })
 
+const logout = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+    res.clearCookie("accessToken");
+
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "user logged out successfully",
+    })
+})
+
+
+const sendOtp = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+    const otpSend = await AuthServices.sendOtp(req, res)
+
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "OTP sent successfully",
+    })
+})
+
 
 
 export const AuthController = {
     login,
-    me
+    me,
+    logout,
+    sendOtp
 } 

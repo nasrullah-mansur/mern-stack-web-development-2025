@@ -1,0 +1,1 @@
+send otp page => email => send opt to email => verify otp => new password set page => password set 

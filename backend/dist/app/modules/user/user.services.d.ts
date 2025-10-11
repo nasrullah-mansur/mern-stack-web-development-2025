@@ -5,6 +5,8 @@ export declare const UserServices: {
         updatedAt: NativeDate;
     } & {
         name: string;
+        role: "USER" | "ADMIN";
+        otp: string;
         email: string;
         password: string;
         avatar: string;
@@ -18,6 +20,8 @@ export declare const UserServices: {
         updatedAt: NativeDate;
     } & {
         name: string;
+        role: "USER" | "ADMIN";
+        otp: string;
         email: string;
         password: string;
         avatar: string;

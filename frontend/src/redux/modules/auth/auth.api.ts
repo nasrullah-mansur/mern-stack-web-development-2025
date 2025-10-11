@@ -15,12 +15,19 @@ const userApi = baseApi.injectEndpoints({
                 url: "/auth/me",
             }),
         }),
+        logout: builder.query({
+            query: () => ({
+                method: "GET",
+                url: "/auth/logout",
+            }),
+        }),
     }),
 })
 
 
 export const {
     useLoginMutation,
-    useMeQuery
+    useMeQuery,
+    useLogoutQuery
 } = userApi;
 

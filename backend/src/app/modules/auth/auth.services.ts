@@ -4,7 +4,8 @@ import type { IAuth } from "./auth.interface.js"
 import jwt from "jsonwebtoken"
 
 import bcrypt from "bcryptjs";
-import { createAccessToken, verifyAccessToken } from "../../utils/accessToken.js";
+import { createAccessToken, createShortAccessToken, verifyAccessToken } from "../../utils/accessToken.js";
+import { generateOTP } from "../../utils/generateOTP.js";
 
 const login = async (payload: IAuth, res: Response) => {
     const { email, password } = payload;
@@ -71,7 +72,42 @@ const me = async (req: Request, res: Response) => {
 }
 
 
+const sendOtp = async (req: Request, res: Response) => {
+
+    const user = await User.findOne({ email: req.body.email });
+
+    if (!user) {
+        res.status(401).json({
+            status: "error",
+            message: "user doesn't exist"
+        })
+    }
+
+    // Send Email to this user;
+
+    const updateUser = await User.updateOne(
+        { email: user?.email },
+        { $set: { otp: generateOTP() } },
+    )
+
+
+    const accessToken = createShortAccessToken({
+        email: user?.email,
+    })
+
+
+    res.cookie("accessToken", accessToken, {
+        httpOnly: true,
+        secure: false
+    })
+
+
+
+}
+
+
 export const AuthServices = {
     login,
-    me
+    me,
+    sendOtp
 }

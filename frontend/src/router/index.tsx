@@ -2,6 +2,7 @@ import AppLayout from "@/components/layout/AppLayout";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import Post from "@/components/modules/blog/Post";
 import Login from "@/pages/auth/Login";
+import Logout from "@/pages/auth/Logout";
 import ResetPassword from "@/pages/auth/ResetPassword";
 import SendOtp from "@/pages/auth/SendOtp";
 import SignUp from "@/pages/auth/Signup";
@@ -32,6 +33,10 @@ const router = createBrowserRouter([
             {
                 path: "/login",
                 Component: Login
+            },
+            {
+                path: "/logout",
+                Component: Logout
             },
             {
                 path: "/sign-up",
