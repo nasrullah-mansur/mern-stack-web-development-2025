@@ -1,5 +1,5 @@
 import { User } from "../user/user.model.js";
-import jwt from "jsonwebtoken";
+import jwt, {} from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { createAccessToken, createShortAccessToken, verifyAccessToken } from "../../utils/accessToken.js";
 import { generateOTP } from "../../utils/generateOTP.js";
@@ -66,9 +66,52 @@ const sendOtp = async (req, res) => {
         secure: false
     });
 };
+const verifyOtp = async (req, res) => {
+    const isAccessToken = req.cookies.accessToken;
+    if (!isAccessToken) {
+        res.status(401).json({
+            status: "error",
+            message: "Invalid User"
+        });
+    }
+    const isVerified = verifyAccessToken(isAccessToken);
+    if (!isVerified) {
+        res.status(401).json({
+            status: "error",
+            message: "Unauthorize user"
+        });
+    }
+    const user = await User.findOne({ email: isVerified.email });
+    if (!user) {
+        res.status(401).json({
+            status: "error",
+            message: "user doesn't exist",
+        });
+    }
+    if (user?.otp != req.body.otp) {
+        res.status(401).json({
+            status: "error",
+            message: "OTP does not match"
+        });
+    }
+    const tokenPayload = {
+        name: user?.name,
+        email: user?.email,
+        avatar: user?.avatar,
+        isVerified: user?.isVerified,
+        isPremium: user?.isPremium,
+        role: user?.role
+    };
+    const accessToken = createAccessToken(tokenPayload);
+    res.cookie("accessToken", accessToken, {
+        httpOnly: true,
+        secure: false
+    });
+};
 export const AuthServices = {
     login,
     me,
-    sendOtp
+    sendOtp,
+    verifyOtp
 };
 //# sourceMappingURL=auth.services.js.map

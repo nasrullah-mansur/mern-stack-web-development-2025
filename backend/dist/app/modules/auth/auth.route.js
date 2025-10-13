@@ -5,5 +5,6 @@ router.post("/login", AuthController.login);
 router.get("/me", AuthController.me);
 router.get("/logout", AuthController.logout);
 router.post("/send-otp", AuthController.sendOtp);
+router.post("/verify-otp", AuthController.verifyOtp);
 export const AuthRoute = router;
 //# sourceMappingURL=auth.route.js.map

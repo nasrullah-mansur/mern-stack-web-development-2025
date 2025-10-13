@@ -47,10 +47,22 @@ const sendOtp = catchAsync(async (req: Request, res: Response, next: NextFunctio
 })
 
 
+const verifyOtp = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+    const otpSend = await AuthServices.verifyOtp(req, res)
+
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "OTP verified successfully",
+    })
+})
+
+
 
 export const AuthController = {
     login,
     me,
     logout,
-    sendOtp
+    sendOtp,
+    verifyOtp
 } 

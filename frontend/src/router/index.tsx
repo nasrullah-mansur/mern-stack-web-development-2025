@@ -6,6 +6,7 @@ import Logout from "@/pages/auth/Logout";
 import ResetPassword from "@/pages/auth/ResetPassword";
 import SendOtp from "@/pages/auth/SendOtp";
 import SignUp from "@/pages/auth/Signup";
+import VerifyOtp from "@/pages/auth/VerifyOtp";
 import Contact from "@/pages/contact/Contact";
 import HomePage from "@/pages/home";
 import { withAuth } from "@/utils/withAuth";
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
             {
                 path: "/send-otp",
                 Component: SendOtp
+            },
+            {
+                path: "/verify-otp",
+                Component: VerifyOtp
             },
             {
                 path: "/reset-password",

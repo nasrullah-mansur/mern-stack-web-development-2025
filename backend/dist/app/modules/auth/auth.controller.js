@@ -31,10 +31,18 @@ const sendOtp = catchAsync(async (req, res, next) => {
         message: "OTP sent successfully",
     });
 });
+const verifyOtp = catchAsync(async (req, res, next) => {
+    const otpSend = await AuthServices.verifyOtp(req, res);
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "OTP verified successfully",
+    });
+});
 export const AuthController = {
     login,
     me,
     logout,
-    sendOtp
+    sendOtp,
+    verifyOtp
 };
 //# sourceMappingURL=auth.controller.js.map

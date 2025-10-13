@@ -1,51 +1,51 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
+
 import { Separator } from "@/components/ui/separator";
-import { useSendOtpMutation } from "@/redux/modules/auth/auth.api";
+import { useVerifyOtpMutation } from "@/redux/modules/auth/auth.api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { toast } from "sonner";
 
 import { z } from "zod";
 
 const formSchema = z.object({
-    email: z.string().email(),
+    otp: z.string().min(6, "please enter your otp"),
 });
 
-function SendOtp() {
-    const navigate = useNavigate()
+function VerifyOtp() {
 
-    const [sendOtp] = useSendOtpMutation();
+    const [verifyOtp] = useVerifyOtpMutation();
 
     const form = useForm<z.infer<typeof formSchema>>({
         defaultValues: {
-            email: "",
+            otp: "",
         },
         resolver: zodResolver(formSchema),
     });
     const onSubmit = async (data: z.infer<typeof formSchema>) => {
 
         try {
-            await sendOtp(data).unwrap();
-            navigate('/verify-otp')
-        } catch (error) {
+            await verifyOtp(data).unwrap();
+
+        } catch (error: any) {
             console.log(error);
-            toast.error("Something is wrong");
+            toast.error(error.data.message)
+
         }
+
     };
-
-
-
 
     return (
         <div className="py-10 flex items-center justify-center">
             <div className="max-w-xs w-full flex flex-col items-center">
 
                 <p className="mt-4 text-xl font-semibold tracking-tight">
-                    Send OTP to your email
+                    Verify Your OTP
                 </p>
 
                 <div className="my-7 w-full flex items-center justify-center overflow-hidden">
@@ -59,17 +59,20 @@ function SendOtp() {
                     >
                         <FormField
                             control={form.control}
-                            name="email"
+                            name="otp"
                             render={({ field }) => (
-                                <FormItem>
-                                    <FormLabel>Email</FormLabel>
+                                <FormItem className="flex flex-col items-center justify-center">
                                     <FormControl>
-                                        <Input
-                                            type="email"
-                                            placeholder="Email"
-                                            className="w-full"
-                                            {...field}
-                                        />
+                                        <InputOTP maxLength={6} {...field}>
+                                            <InputOTPGroup>
+                                                <InputOTPSlot index={0} />
+                                                <InputOTPSlot index={1} />
+                                                <InputOTPSlot index={2} />
+                                                <InputOTPSlot index={3} />
+                                                <InputOTPSlot index={4} />
+                                                <InputOTPSlot index={5} />
+                                            </InputOTPGroup>
+                                        </InputOTP>
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
@@ -77,7 +80,7 @@ function SendOtp() {
                         />
 
                         <Button type="submit" className="mt-4 w-full">
-                            Send OTP
+                            Verify OTP
                         </Button>
                     </form>
                 </Form>
@@ -95,4 +98,4 @@ function SendOtp() {
     );
 }
 
-export default SendOtp;
+export default VerifyOtp;
