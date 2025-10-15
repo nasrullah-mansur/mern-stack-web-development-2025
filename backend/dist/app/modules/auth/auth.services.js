@@ -3,6 +3,7 @@ import jwt, {} from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { createAccessToken, createShortAccessToken, verifyAccessToken } from "../../utils/accessToken.js";
 import { generateOTP } from "../../utils/generateOTP.js";
+import { encryptPassword } from "../../utils/password.js";
 const login = async (payload, res) => {
     const { email, password } = payload;
     const isUserExist = await User.findOne({ email });
@@ -108,10 +109,39 @@ const verifyOtp = async (req, res) => {
         secure: false
     });
 };
+const updatePassword = async (req, res) => {
+    const isAccessToken = req.cookies.accessToken;
+    if (!isAccessToken) {
+        res.status(401).json({
+            status: "error",
+            message: "Invalid User"
+        });
+    }
+    const isVerified = verifyAccessToken(isAccessToken);
+    if (!isVerified) {
+        res.status(401).json({
+            status: "error",
+            message: "Unauthorize user"
+        });
+    }
+    const user = await User.findOne({ email: isVerified.email });
+    if (!user) {
+        res.status(401).json({
+            status: "error",
+            message: "user doesn't exist",
+        });
+    }
+    await User.findByIdAndUpdate(user?._id, {
+        password: await encryptPassword(req.body.password),
+        otp: null
+    });
+    res.clearCookie("accessToken");
+};
 export const AuthServices = {
     login,
     me,
     sendOtp,
-    verifyOtp
+    verifyOtp,
+    updatePassword
 };
 //# sourceMappingURL=auth.services.js.map

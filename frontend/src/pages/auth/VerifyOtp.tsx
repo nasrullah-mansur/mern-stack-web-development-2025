@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { InputOTP, InputOTPGroup, InputOTPSlot } from "@/components/ui/input-otp";
 
 import { Separator } from "@/components/ui/separator";
 import { useVerifyOtpMutation } from "@/redux/modules/auth/auth.api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import { toast } from "sonner";
 
 import { z } from "zod";
@@ -18,6 +18,8 @@ const formSchema = z.object({
 });
 
 function VerifyOtp() {
+
+    const navigate = useNavigate();
 
     const [verifyOtp] = useVerifyOtpMutation();
 
@@ -31,7 +33,7 @@ function VerifyOtp() {
 
         try {
             await verifyOtp(data).unwrap();
-
+            navigate("/reset-password");
         } catch (error: any) {
             console.log(error);
             toast.error(error.data.message)

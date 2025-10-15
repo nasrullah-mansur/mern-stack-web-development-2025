@@ -8,5 +8,6 @@ export declare const AuthServices: {
     me: (req: Request, res: Response) => Promise<string | jwt.JwtPayload>;
     sendOtp: (req: Request, res: Response) => Promise<void>;
     verifyOtp: (req: Request, res: Response) => Promise<void>;
+    updatePassword: (req: Request, res: Response) => Promise<void>;
 };
 //# sourceMappingURL=auth.services.d.ts.map

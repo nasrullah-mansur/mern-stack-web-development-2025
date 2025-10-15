@@ -8,5 +8,6 @@ router.get("/me", AuthController.me)
 router.get("/logout", AuthController.logout)
 router.post("/send-otp", AuthController.sendOtp)
 router.post("/verify-otp", AuthController.verifyOtp)
+router.post("/update-password", AuthController.updatePassword)
 
 export const AuthRoute = router;

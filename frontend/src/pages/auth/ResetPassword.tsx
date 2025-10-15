@@ -2,9 +2,11 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
+import { useResetPassMutation } from "@/redux/modules/auth/auth.api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
+import { toast } from "sonner";
 
 import { z } from "zod";
 
@@ -13,10 +15,10 @@ const formSchema = z
 
         password: z
             .string()
-            .min(8, "Password must be at least 8 characters long"),
+            .min(3, "Password must be at least 8 characters long"),
         confirm_password: z
             .string()
-            .min(8, "Password must be at least 8 characters long"),
+            .min(3, "Password must be at least 8 characters long"),
     })
     .refine((data) => data.password === data.confirm_password, {
         path: ["confirm_password"],
@@ -25,6 +27,10 @@ const formSchema = z
 
 function ResetPassword() {
 
+    const navigate = useNavigate();
+
+    const [resetPass] = useResetPassMutation();
+
     const form = useForm<z.infer<typeof formSchema>>({
         defaultValues: {
             password: "",
@@ -32,8 +38,16 @@ function ResetPassword() {
         },
         resolver: zodResolver(formSchema),
     });
-    const onSubmit = (data: z.infer<typeof formSchema>) => {
-        console.log(data);
+    const onSubmit = async (data: z.infer<typeof formSchema>) => {
+        try {
+            await resetPass(data).unwrap();
+            navigate('/login')
+
+        } catch (error) {
+            console.log(error);
+            toast.error("Something is wrong")
+        }
+
     };
 
     return (

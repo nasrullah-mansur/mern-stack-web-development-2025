@@ -58,11 +58,23 @@ const verifyOtp = catchAsync(async (req: Request, res: Response, next: NextFunct
 })
 
 
+const updatePassword = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+    const otpSend = await AuthServices.updatePassword(req, res)
+
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "Password updated successfully",
+    })
+})
+
+
 
 export const AuthController = {
     login,
     me,
     logout,
     sendOtp,
-    verifyOtp
+    verifyOtp,
+    updatePassword
 } 

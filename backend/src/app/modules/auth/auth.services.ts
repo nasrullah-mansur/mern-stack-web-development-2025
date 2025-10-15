@@ -6,6 +6,7 @@ import jwt, { type JwtPayload } from "jsonwebtoken"
 import bcrypt from "bcryptjs";
 import { createAccessToken, createShortAccessToken, verifyAccessToken } from "../../utils/accessToken.js";
 import { generateOTP } from "../../utils/generateOTP.js";
+import { encryptPassword } from "../../utils/password.js";
 
 const login = async (payload: IAuth, res: Response) => {
     const { email, password } = payload;
@@ -163,10 +164,50 @@ const verifyOtp = async (req: Request, res: Response) => {
 
 }
 
+const updatePassword = async (req: Request, res: Response) => {
+
+    const isAccessToken = req.cookies.accessToken;
+
+    if (!isAccessToken) {
+        res.status(401).json({
+            status: "error",
+            message: "Invalid User"
+        })
+    }
+
+    const isVerified = verifyAccessToken(isAccessToken)
+
+    if (!isVerified) {
+        res.status(401).json({
+            status: "error",
+            message: "Unauthorize user"
+        })
+    }
+
+    const user = await User.findOne({ email: (isVerified as JwtPayload).email });
+
+    if (!user) {
+        res.status(401).json({
+            status: "error",
+            message: "user doesn't exist",
+        })
+    }
+
+    await User.findByIdAndUpdate(user?._id, {
+        password: await encryptPassword(req.body.password),
+        otp: null
+    })
+
+    res.clearCookie("accessToken");
+
+
+}
+
 
 export const AuthServices = {
     login,
     me,
     sendOtp,
-    verifyOtp
+    verifyOtp,
+    updatePassword
 }
