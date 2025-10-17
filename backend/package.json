@@ -20,6 +20,7 @@
   "dependencies": {
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/nodemailer": "^7.0.2",
     "bcryptjs": "^3.0.2",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.5",
@@ -29,6 +30,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongodb": "^6.20.0",
     "mongoose": "^8.18.3",
+    "nodemailer": "^7.0.9",
     "zod": "^4.1.11"
   }
 }
