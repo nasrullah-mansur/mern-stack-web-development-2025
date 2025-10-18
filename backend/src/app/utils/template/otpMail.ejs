@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title><%= appName || "Your App" %> — One-time code</title>
+    <style>
+      /* Simple, email-friendly CSS (inline-friendly) */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        margin: 0;
+        padding: 0;
+        background: #f4f6f8;
+        color: #0b1a2b;
+      }
+      .container {
+        max-width: 600px;
+        margin: 24px auto;
+        background: #ffffff;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(13, 38, 63, 0.08);
+      }
+      .header {
+        padding: 20px 24px;
+        background: linear-gradient(90deg, #0b74de 0%, #1463c9 100%);
+        color: #fff;
+        text-align: left;
+      }
+      .logo {
+        font-weight: 700;
+        font-size: 18px;
+        letter-spacing: 0.2px;
+      }
+      .content {
+        padding: 28px 24px;
+        line-height: 1.5;
+        color: #0b1a2b;
+      }
+      .greeting {
+        margin-bottom: 16px;
+        font-size: 16px;
+      }
+      .otp-box {
+        margin: 20px 0;
+        text-align: center;
+      }
+      .otp {
+        display: inline-block;
+        background: #f7fbff;
+        border: 1px dashed #dbeefa;
+        padding: 14px 18px;
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: 4px;
+        border-radius: 8px;
+        color: #0b1a2b;
+      }
+      .note {
+        font-size: 13px;
+        color: #4b667a;
+        margin-top: 10px;
+      }
+      .cta {
+        margin-top: 22px;
+        text-align: center;
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 18px;
+        border-radius: 8px;
+        background: #0b74de;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+      }
+      .footer {
+        padding: 16px 24px;
+        font-size: 12px;
+        color: #7a8b97;
+        background: #fbfcfd;
+        text-align: center;
+      }
+      @media (max-width: 420px) {
+        .otp {
+          font-size: 22px;
+          padding: 12px 14px;
+        }
+        .container {
+          margin: 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container"
+      role="article"
+      aria-label="One-time code for <%= appName || 'Your App' %>"
+    >
+      <div class="header">
+        <div class="logo"><%= appName || "Your App" %></div>
+      </div>
+
+      <div class="content">
+        <div class="greeting">Hi <%= name || "there" %>,</div>
+
+        <div>
+          Use the code below to complete your action. This code will expire in
+          <strong>5 minutes</strong>.
+        </div>
+
+        <div class="otp-box">
+          <div class="otp" aria-label="One-time password"><%= otp %></div>
+          <div class="note">
+            Don't share this code with anyone. If you didn't request this, you
+            can ignore this email.
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

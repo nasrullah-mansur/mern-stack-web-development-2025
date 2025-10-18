@@ -2,13 +2,14 @@ import type { Request, Response } from "express";
 import { User } from "../user/user.model.js";
 import type { IAuth } from "./auth.interface.js"
 import jwt, { type JwtPayload } from "jsonwebtoken"
-import nodemailer from "nodemailer";
+
 
 import bcrypt from "bcryptjs";
 import { createAccessToken, createShortAccessToken, verifyAccessToken } from "../../utils/accessToken.js";
 import { generateOTP } from "../../utils/generateOTP.js";
 import { encryptPassword } from "../../utils/password.js";
-import { envVars } from "../../config/env.js";
+import { sendEmail } from "../../utils/sendEmail.js";
+
 
 const login = async (payload: IAuth, res: Response) => {
     const { email, password } = payload;
@@ -77,6 +78,8 @@ const me = async (req: Request, res: Response) => {
 
 const sendOtp = async (req: Request, res: Response) => {
 
+
+
     const user = await User.findOne({ email: req.body.email });
     const otp = generateOTP();
 
@@ -100,25 +103,25 @@ const sendOtp = async (req: Request, res: Response) => {
     })
 
 
-    const transporter = nodemailer.createTransport({
-        host: envVars.EMAIL.SMTP_HOST,
-        port: envVars.EMAIL.SMTP_PORT,
-        secure: false, // true for 465, false for other ports
-        auth: {
-            user: envVars.EMAIL.SMTP_USERNAME,
-            pass: envVars.EMAIL.SMTP_PASS,
-        },
-    } as nodemailer.TransportOptions);
+    try {
+        const emailInfo = {
+            fileName: "otpMail.ejs",
+            from: "ahmadsitweb@gmail.com",
+            to: user?.email,
+            subject: "Reset Password OTP"
+        };
+        const templateData = {
+            appName: "Advance Blog",
+            name: user?.name,
+            otp: otp
+        }
+        await sendEmail(emailInfo, templateData);
+    } catch (error) {
+        console.log(error);
 
-    const info = await transporter.sendMail({
-        from: 'ahmadsitweb@gmail.com',
-        to: "muyeenkhan80@gmail.com",
-        subject: "Reset Password OTP",
-        // text: "Hello world?", // plain‑text body
-        html: `<b>Your otp is ${otp}</b>`, // HTML body
-    });
+    }
 
-    console.log("Message sent:", info.messageId);
+
 
 
     res.cookie("accessToken", accessToken, {

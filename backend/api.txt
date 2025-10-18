@@ -1,10 +1,8 @@
 
-============= User API ===============
-/user/all-users (GET)
-/user/create-user (POST) 
-/user/delete-user/:id (POST)
-/user/update-user/:id (POST)
-
+1. Repeat Email sending;
+2. Global Error Handling;
+3. Middleware Revision;
+4. Access Token;
 
 
 
