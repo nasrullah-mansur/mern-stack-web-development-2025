@@ -24,7 +24,8 @@ const createUser = catchAsync(async (req: Request, res: Response, next: NextFunc
     res.status(httpStatus.CREATED).json({
         status: "success",
         message: "user create successfully",
-        user: user,
+        user: user.user,
+        payment: user.payment,
     })
 })
 

@@ -15,7 +15,8 @@ const createUser = catchAsync(async (req, res, next) => {
     res.status(httpStatus.CREATED).json({
         status: "success",
         message: "user create successfully",
-        user: user,
+        user: user.user,
+        payment: user.payment,
     });
 });
 export const UserController = {
