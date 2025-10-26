@@ -3,6 +3,10 @@
 import { axiosBaseQuery } from '@/redux/axiosBaseQuery'
 import { createApi } from '@reduxjs/toolkit/query/react'
 
+const tagTypes: string[] = [
+    "USER"
+]
+
 // Define a service using a base URL and expected endpoints
 export const baseApi = createApi({
     reducerPath: 'baseApi',
@@ -12,6 +16,7 @@ export const baseApi = createApi({
     baseQuery: axiosBaseQuery({
         baseUrl: 'http://localhost:4000/api/v1',
     }),
-    endpoints: () => ({})
+    endpoints: () => ({}),
+    tagTypes: tagTypes
 
 })

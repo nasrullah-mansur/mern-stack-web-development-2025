@@ -4,9 +4,13 @@ import Logo from '@/components/ui/logo'
 import { ModeToggle } from '@/components/ui/mode-toggler'
 import { NavigationSheet } from '@/components/ui/navigation-sheet'
 import { NavMenu } from '@/components/ui/navMenu'
+import { useMeQuery } from '@/redux/modules/auth/auth.api'
 import { Link } from 'react-router'
 
 export default function Header() {
+
+    const { data, isError } = useMeQuery(undefined);
+
     return (
         <div className="bg-muted">
             <nav className="h-16 bg-background border-b">
@@ -18,7 +22,11 @@ export default function Header() {
                     </div>
                     <div className="flex items-center gap-3">
                         <Button asChild variant="outline" className="hidden sm:inline-flex">
-                            <Link to={"/login"}>Login</Link>
+                            {data && !isError ?
+                                <Link to={"/me"}>Dashboard</Link>
+                                :
+                                <Link to={"/login"}>Login</Link>
+                            }
                         </Button>
                         <Search />
                         <ModeToggle />

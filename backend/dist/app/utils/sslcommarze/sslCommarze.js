@@ -1,4 +1,5 @@
 import axios from "axios";
+import { envVars } from "../../config/env.js";
 export const sslCommarze = async (cus_data) => {
     const paymentInit = {
         store_id: "advan68fcc690cb7b1",
@@ -6,9 +7,9 @@ export const sslCommarze = async (cus_data) => {
         total_amount: 100,
         currency: "BDT",
         tran_id: "REF123",
-        success_url: "http://localhost:5173/payment/success",
-        fail_url: "http://localhost:5173/payment/fail",
-        cancel_url: "http://localhost:5173/payment/cancel",
+        success_url: `${envVars.PAYMENT.PAYMENT_BACKEND_SUCCESS_URL}/?email=${cus_data.email}`,
+        fail_url: envVars.PAYMENT.PAYMENT_BACKEND_FAIL_URL,
+        cancel_url: envVars.PAYMENT.PAYMENT_BACKEND_CANCEL_URL,
         cus_name: cus_data.name,
         cus_email: cus_data.email,
         cus_add1: "Dhaka",
