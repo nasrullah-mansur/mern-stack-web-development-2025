@@ -24,18 +24,18 @@ const data = {
   },
   navMain: [
     {
-      title: "Platform Users",
+      title: "Blog Categories",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "All Users",
-          url: "#",
+          title: "All Categories",
+          url: "/me/all-categories",
         },
         {
-          title: "Create Users",
-          url: "#",
+          title: "Create Category",
+          url: "/me/create-category",
         },
       ],
     },

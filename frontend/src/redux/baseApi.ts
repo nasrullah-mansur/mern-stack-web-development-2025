@@ -4,7 +4,8 @@ import { axiosBaseQuery } from '@/redux/axiosBaseQuery'
 import { createApi } from '@reduxjs/toolkit/query/react'
 
 const tagTypes: string[] = [
-    "USER"
+    "USER",
+    "CATEGORY"
 ]
 
 // Define a service using a base URL and expected endpoints
