@@ -10,7 +10,29 @@ const create = catchAsync(async (req: Request, res: Response, next: NextFunction
 
     res.status(httpStatus.CREATED).json({
         status: "success",
-        message: "user logged in successfully",
+        message: "Category added successfully",
+        data
+    })
+})
+
+const update = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+    const data = await CategoryService.update(req, (req.params.id as string));
+
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "Category updated successfully",
+        data
+    })
+})
+
+const delete_cat = catchAsync(async (req: Request, res: Response, next: NextFunction) => {
+
+    const data = await Category.findByIdAndDelete(req.params.id);
+
+    res.status(httpStatus.CREATED).json({
+        status: "success",
+        message: "Category removed successfully",
         data
     })
 })
@@ -43,5 +65,7 @@ const viewCategory = catchAsync(async (req: Request, res: Response, next: NextFu
 export const CategoryController = {
     create,
     allCategories,
-    viewCategory
+    viewCategory,
+    update,
+    delete_cat
 }

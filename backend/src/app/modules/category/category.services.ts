@@ -7,6 +7,12 @@ const create = async (req: Request) => {
     return createCategory;
 }
 
+const update = async (req: Request, id: string) => {
+    const createCategory = Category.findByIdAndUpdate(id, req.body);
+    return createCategory;
+}
+
 export const CategoryService = {
-    create
+    create,
+    update
 }

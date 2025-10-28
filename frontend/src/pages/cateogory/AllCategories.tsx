@@ -7,13 +7,30 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-import { useGetCategoriesQuery } from "@/redux/modules/category/category.api";
+import { useDeleteMutation, useGetCategoriesQuery } from "@/redux/modules/category/category.api";
 import { Link } from "react-router";
+import { toast } from "sonner";
 
 function AllCategories() {
 
     const { data, isLoading } = useGetCategoriesQuery(undefined);
+    const [deleteCat] = useDeleteMutation();
 
+    const handleDelete = async (id: string) => {
+        const isConfirm = confirm("Are you sure you want to delete it?");
+        if (!isConfirm) {
+            return;
+        }
+
+        try {
+            await deleteCat(id);
+            toast.success("Category removed successfully");
+
+        } catch (error) {
+            console.log(error);
+
+        }
+    }
 
     return (
         <div>
@@ -49,7 +66,7 @@ function AllCategories() {
                                         <Button asChild className="cursor-pointer">
                                             <Link to={`/me/edit-category/${cat._id}`}>Edit</Link>
                                         </Button>
-                                        <Button className="cursor-pointer">
+                                        <Button onClick={() => handleDelete(cat._id)} className="cursor-pointer">
                                             Delete
                                         </Button>
                                     </div>
