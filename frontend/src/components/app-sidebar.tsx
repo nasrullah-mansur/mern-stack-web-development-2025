@@ -27,7 +27,7 @@ const data = {
       title: "Blog Categories",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
+      isActive: false,
       items: [
         {
           title: "All Categories",
@@ -39,7 +39,22 @@ const data = {
         },
       ],
     },
-
+    {
+      title: "Blogs",
+      url: "#",
+      icon: SquareTerminal,
+      isActive: false,
+      items: [
+        {
+          title: "All Blogs",
+          url: "/me/all-blogs",
+        },
+        {
+          title: "Create Blog",
+          url: "/me/create-blog",
+        },
+      ],
+    },
   ],
 
 }

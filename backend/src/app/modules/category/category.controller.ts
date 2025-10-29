@@ -44,7 +44,7 @@ const allCategories = catchAsync(async (req: Request, res: Response, next: NextF
 
     res.status(httpStatus.CREATED).json({
         status: "success",
-        message: "user logged in successfully",
+        message: "Category retrieved successfully",
         data
     })
 })

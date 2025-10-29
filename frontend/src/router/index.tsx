@@ -6,6 +6,8 @@ import ResetPassword from "@/pages/auth/ResetPassword";
 import SendOtp from "@/pages/auth/SendOtp";
 import SignUp from "@/pages/auth/Signup";
 import VerifyOtp from "@/pages/auth/VerifyOtp";
+import CreateBlog from "@/pages/blog/CreateBlog";
+import EditBlog from "@/pages/blog/EditBlog";
 import AllCategories from "@/pages/cateogory/AllCategories";
 import CreateCategory from "@/pages/cateogory/CreateCategory";
 import EditCategory from "@/pages/cateogory/EditCategory";
@@ -71,6 +73,18 @@ const router = createBrowserRouter([
             {
                 path: "edit-category/:id",
                 Component: EditCategory
+            },
+            {
+                path: "create-blog",
+                Component: CreateBlog
+            },
+            {
+                path: "all-blogs",
+                Component: AllCategories
+            },
+            {
+                path: "edit-blog/:id",
+                Component: EditBlog
             }
         ],
     }

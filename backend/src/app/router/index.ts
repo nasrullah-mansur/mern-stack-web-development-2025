@@ -3,6 +3,7 @@ import { UserRoute } from "../modules/user/user.route.js";
 import { AuthRoute } from "../modules/auth/auth.route.js";
 import { PaymentRoute } from "../modules/payment/payment.route.js";
 import { CategoryRoute } from "../modules/category/category.route.js";
+import { BlogRoute } from "../modules/blog/blog.route.js";
 
 const router = Router();
 
@@ -27,6 +28,10 @@ const routeList: IRoute[] = [
     {
         path: "/category",
         route: CategoryRoute
+    },
+    {
+        path: "/blog",
+        route: BlogRoute
     }
 ];
 

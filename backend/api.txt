@@ -1,8 +1,22 @@
+Total Days - 60
 
-1. Repeat Email sending;
-2. Global Error Handling;
-3. Middleware Revision;
-4. Access Token;
+1. Advance database design - 3
+2. Advance Role Permission - 2
+3. Image Uploading - 1
+4. Social Login - 1
+5. Next JS - 16
+6. Next Auth - 3
+7. WebSocket (Real time communication) - 5
+8. Marketplace (UpWork, Fiver) - 5
+9. Final Project (E-Com) - 20
+ 
+----------
+
+Total Time - 4 days
+1. PostgresQL
+2. Prisma
+3. Basic React Native 
+
 
 
 

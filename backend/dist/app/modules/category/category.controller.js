@@ -30,7 +30,7 @@ const allCategories = catchAsync(async (req, res, next) => {
     const data = await Category.find({});
     res.status(httpStatus.CREATED).json({
         status: "success",
-        message: "user logged in successfully",
+        message: "Category retrieved successfully",
         data
     });
 });
